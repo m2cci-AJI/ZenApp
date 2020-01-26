@@ -1,1 +1,94 @@
-<p>tuning works!</p>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card border-dark mb-3">
+        <div class="card-header text-center">
+          <h3>Type de respiration</h3>
+        </div>
+          <div class="card-body">
+              <fieldset>
+                <div class = "form-check">
+                  <input class = "form-check-input" type = "radio" name = "respiration" value = "respCalmante">
+                  <label class = "form-check-label">Respiration calmante</label>
+                </div>
+                <br>
+                <div class = "form-check">
+                  <input class = "form-check-input" type = "radio" name = "respiration" value = "resDynamisante">
+                  <label class = "form-check-label">Respiration dynamisante</label>
+                </div>
+                <br>
+                <div class = "form-check">
+                  <input class = "form-check-input" type = "radio" name = "respiration" value = "respCarre">
+                  <label class = "form-check-label">Respiration carrée</label>
+                </div>
+                <br>
+                <div class = "form-check">
+                  <input class = "form-check-input" type = "radio" name = "respiration" value = "cohCardiaque">
+                  <label class = "form-check-label">Cohérence cardiaque</label>
+                </div>
+              </fieldset>
+          </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card border-dark mb-3">
+        <div class="card-header text-center">
+          <h3>Durée de la séance (en minutes)</h3>
+        </div>
+          <div class="card-body">
+            <ng5-slider [(value)]= "valueSeance" [options]= "optionsSeance"></ng5-slider>
+          </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card border-dark mb-3">
+        <div class="card-header text-center">
+          <h3>Régalges manuels (en secondes)</h3>
+        </div>
+          <div class="card-body">
+           <h6>Durée de l'inspiration </h6>
+           <ng5-slider [(value)]= "valueIns" [options]= "optionsIns"></ng5-slider>
+          <br>
+          <br>
+           <h6>Durée de l'expiration</h6>
+           <ng5-slider [(value)]= "valueExp" [options]= "optionsExp"></ng5-slider>
+           <br>
+          <br>
+           <h6>Durée de pause poumons pleins</h6>
+           <ng5-slider [(value)]= "valuePlein" [options]= "optionsPlein"></ng5-slider>
+           <br>
+          <br>
+           <h6>Durée de pause poumons vides</h6>
+           <ng5-slider [(value)]= "valueVide" [options]= "optionsVide"></ng5-slider>
+          </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card border-dark mb-3">
+        <div class="card-header text-center">
+          <h3>Musique</h3>
+        </div>
+          <div class="card-body">
+            <fieldset>
+              <div class = "form-check">
+                <input class = "form-check-input" type = "radio" name = "musique" value = "sansMusique">
+                <label class = "form-check-label">Sans musique</label>
+              </div>
+              <br>
+              <div class = "form-check">
+                <input class = "form-check-input" type = "radio" name = "musique" value = "interMusique">
+                <label class = "form-check-label">son interface</label>
+              </div>
+              <br>
+              <div class = "form-check">
+                <input class = "form-check-input" type = "radio" name = "musique" value = "fullMusqiue">
+                <label class = "form-check-label">Musique</label>
+              </div>
+            </fieldset>
+          </div>
+      </div>
+    </div>
+    <button type = "button" class = "btn btn-lg btn-secondary offset-md-9">Commencer la séance</button>
+  </div>
+</div>
+

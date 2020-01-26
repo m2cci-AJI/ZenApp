@@ -1,1 +1,29 @@
-<p>practice works!</p>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-7">
+      <div class="card border-dark mb-3">
+        <div class="card-header text-center">
+          <h3>Cohérence cardiaque</h3>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div id="animeDemo">
+              <svg width="500" height="510" >
+                <rect id = "rect" x = "267" y = "10" width = "80px" height = "500" style = "fill:#f5f5f0;stroke-width:2;stroke-dasharray:none;stroke:#000000;" ></rect>
+              </svg>
+              <section class="stage">
+                <figure class="ball bubble"></figure>
+              </section>
+            </div>
+          </div>
+          <br>
+          <div class="row">
+          <div class="rect-time-calm">{{ChronometreMinutes}}:{{ChronometreSecondes}}</div>
+          <button type = "button" class = "btn btn-outline-danger col-md-2 offset-md-3" (click) = "pauseAnimation()"> Pause</button>
+          <button type = "button" class = "btn btn-outline-success col-md-2 offset-md-3" (click) = "restartAnimation()" [disabled] = "(minutes === 0) && (secondes === 0)"> Play</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
