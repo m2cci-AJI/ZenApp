@@ -1,0 +1,13 @@
+label {
+  font-size: x-large;
+}
+
+h3 {
+  text-align: center;
+}
+
+input[type = 'radio'] {
+  transform: scale(2);
+  position: relative;
+  top: -1px;
+}

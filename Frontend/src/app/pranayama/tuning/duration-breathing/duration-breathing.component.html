@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-11">
+      <div class="card border-dark mb-3">
+          <div class="card-body text-center">
+            <h4>Manipulez cette barre afin de préciser la durée d'une phase de respiration (en secondes).</h4>
+            <br>
+            <ng5-slider [(value)]= "valueRes" [options]= "optionsRes"></ng5-slider>
+            <br>
+            <br>
+            <button type = "button" class = "btn btn-lg btn-danger float-left" (click) = "invalidate()">Reculez</button>
+            <button type = "button" class = "btn btn-lg btn-success float-right" (click) = "validate()">Continuez</button>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

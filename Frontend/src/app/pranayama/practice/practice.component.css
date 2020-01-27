@@ -1,5 +1,5 @@
 
-.rect-time-calm {
+.rect-time {
   position: relative;
   width: 100px;
   height: 50px;
@@ -13,20 +13,12 @@
   color: black;
 }
 
-.play-calm .fa {
-  position: relative;
-  bottom: 400px;
-  left: 500px;
-}
-
 .ball {
   display: inline-block;
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   border-radius: 100%;
   position: relative;
-  bottom: 150px;
-  right: 252px;
   background: radial-gradient(circle at bottom, #81e8f6, #76deef 10%, #055194 80%, #062745 100%); }
   .ball:before {
     content: "";
@@ -83,7 +75,7 @@
       background: radial-gradient(circle at 50% 80%, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 74%, white 80%, white 84%, rgba(255, 255, 255, 0) 100%); }
 
 .stage {
-  display: inline-block;
+  position: relative;
   margin: 20px;
   -webkit-perspective: 1200px;
   -moz-perspective: 1200px;
@@ -146,3 +138,23 @@
   97%, 100% {
     -webkit-transform: scale(1);
     transform: scale(1); } }
+
+    section[class = "stage ball-calm"] {
+      bottom: 350px;
+      right: 55px;
+    }
+
+    section[class = "stage ball-dyn"]{
+      bottom: 350px;
+      left: -50px;
+    }
+
+    section[class = "stage ball-carre"]  {
+      bottom: 450px;
+      left: -50px;
+    }
+
+     section[class = "stage ball-coh"] {
+      bottom: 520px;
+      left: 250px;
+    }

@@ -1,16 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TuningComponent } from './tuning/tuning.component';
 import { UserManualComponent } from './user-manual/user-manual.component';
 import { PracticeComponent } from './practice/practice.component';
 import { RouterModule } from '@angular/router';
 import { paranayamaRoutes } from './pranayama.routes';
-import { Ng5SliderModule } from 'ng5-slider';
+import { TuningModule } from './tuning/tuning.module';
 
 @NgModule({
-  declarations: [TuningComponent, UserManualComponent, PracticeComponent],
+  declarations: [UserManualComponent, PracticeComponent],
   imports: [
-    CommonModule, RouterModule.forChild(paranayamaRoutes), Ng5SliderModule
+    CommonModule,
+    RouterModule.forChild(paranayamaRoutes),
+    TuningModule
   ]
 })
 

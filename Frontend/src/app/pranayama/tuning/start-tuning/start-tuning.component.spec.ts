@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TuningComponent } from './tuning.component';
+import { StartTuningComponent } from './start-tuning.component';
 
-describe('TuningComponent', () => {
-  let component: TuningComponent;
-  let fixture: ComponentFixture<TuningComponent>;
+describe('StartTuningComponent', () => {
+  let component: StartTuningComponent;
+  let fixture: ComponentFixture<StartTuningComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TuningComponent ]
+      declarations: [ StartTuningComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TuningComponent);
+    fixture = TestBed.createComponent(StartTuningComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
