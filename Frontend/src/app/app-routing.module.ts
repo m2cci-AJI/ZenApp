@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './home/home.component';
 import { paranayamaRoutes } from './pranayama/pranayama.routes';
+import { homeRoute } from './home/home.route';
 
 const routes: Routes = [
-  {path: 'home', component: HomeComponent},
+  homeRoute,
+  {path: '', redirectTo: 'home' , pathMatch: 'full'},
   ...paranayamaRoutes
 ];
 
