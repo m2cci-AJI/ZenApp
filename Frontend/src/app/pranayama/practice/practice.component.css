@@ -1,5 +1,5 @@
 
-.button.rect-time {
+.rect-time {
   border-color: black;
   border-width: 1px;
   border-style: solid;
@@ -8,6 +8,8 @@
   font-weight: bold;
   color: black;
   font-size: larger;
+  display: flex;
+  flex-direction: row;
 }
 
 h4 {

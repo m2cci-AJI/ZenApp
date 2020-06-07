@@ -16,7 +16,11 @@
       <br>
       <br>
       <div class="buttons d-flex flex-row align-items-stretch flex-nowrap justify-content-between">
-        <div class="button rect-time"> {{ChronometreMinutes}}:{{ChronometreSecondes}} </div>
+        <div class="rect-time">
+          <p>{{minutes | number : '2.0-0'}}</p>
+          <p> : </p>
+          <p>{{secondes | number : '2.0-0'}}</p>
+        </div>
         <button class = "button" type="button" class="btn btn-sm btn-outline-danger" (click)="pauseAnimation()" [disabled]="!disabledPlay">
           Pause</button>
         <button class = "button" type="button" class="btn btn-sm btn-outline-success" (click)="restartAnimation()"
@@ -39,7 +43,11 @@
         </div>
       </div>
       <div class="buttons d-flex justify-content-between">
-        <div class="button rect-time"> {{ChronometreMinutes}}:{{ChronometreSecondes}} </div>
+        <div class="rect-time">
+          <p>{{minutes | number : '2.0-0'}}</p>
+          <p> : </p>
+          <p>{{secondes | number : '2.0-0'}}</p>
+        </div>
         <button type="button" class="btn btn-sm btn-outline-danger" (click)="pauseAnimation()" [disabled]="!disabledPlay">
           Pause</button>
         <button type="button" class="btn btn-sm btn-outline-success" (click)="restartAnimation()"
@@ -62,7 +70,11 @@
           </div>
         </div>
       <div class="buttons d-flex justify-content-between">
-        <div class="button rect-time"> {{ChronometreMinutes}}:{{ChronometreSecondes}} </div>
+        <div class="rect-time">
+          <p>{{minutes | number : '2.0-0'}}</p>
+          <p> : </p>
+          <p>{{secondes | number : '2.0-0'}}</p>
+        </div>
         <button type="button" class="btn btn-sm btn-outline-danger" (click)="pauseAnimation()" [disabled]="!disabledPlay">
           Pause</button>
         <button type="button" class="btn btn-sm btn-outline-success" (click)="restartAnimation()"
@@ -85,7 +97,11 @@
           </div>
         </div>
       <div class = "buttons d-flex justify-content-between">
-        <div class="button rect-time" style = "flex-shrink: 2"> {{ChronometreMinutes}}:{{ChronometreSecondes}} </div>
+        <div class="rect-time">
+          <p>{{minutes | number : '2.0-0'}}</p>
+          <p> : </p>
+          <p>{{secondes | number : '2.0-0'}}</p>
+        </div>
         <button type="button" style = "flex-shrink: 2" class="btn btn-sm btn-outline-danger" (click)="pauseAnimation()"
           [disabled]="!disabledPlay">
           Pause</button>

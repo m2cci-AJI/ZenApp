@@ -36,8 +36,8 @@ export class PracticeComponent implements OnInit, AfterViewInit, OnDestroy {
   tableImpacts: number[];
 
   constructor(private pranayamaService: PranayamaService,
-    private calendrierService: CalendrierService,
-    private matDialog: MatDialog) {
+              private calendrierService: CalendrierService,
+              private matDialog: MatDialog) {
     if (this.pranayamaService.sessionPranyama) {
       this.initValues();
       this.pranayamaService.sessionPranyama = undefined;
@@ -228,24 +228,7 @@ export class PracticeComponent implements OnInit, AfterViewInit, OnDestroy {
     }
   }
 
-
-  get ChronometreMinutes() {
-    if (this.minutes < 10) {
-      return '0' + this.minutes;
-    } else {
-      return this.minutes;
-    }
-  }
-
-  get ChronometreSecondes() {
-    if (this.secondes < 10) {
-      return '0' + this.secondes;
-    } else {
-      return this.secondes;
-    }
-  }
-
-  get repirationOutput() {
+  get repirationOutput(): any {
     return this.respiration as any;
   }
 
