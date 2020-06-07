@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
+import { MeditationModule } from './meditation/meditation.module';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { HeaderComponent } from './header/header.component';
     AppRoutingModule,
     AngularFontAwesomeModule,
     PranayamaModule,
+    MeditationModule,
     NgbModule,
     FormsModule,
     HttpClientModule
