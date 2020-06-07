@@ -10,12 +10,16 @@ import { PranayamaService } from './pranayama/pranayama.service';
 import { CommentComponent } from './comment/comment.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    CommentComponent
+    CommentComponent,
+    FooterComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

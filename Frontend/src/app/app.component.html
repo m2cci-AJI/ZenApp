@@ -1,47 +1,6 @@
 <div class="container-fluid">
-  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <ul class="nav navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" routerLink='/home'><i class="fa fa-home"></i> Home</a>
-      </li>
-      <li ngbDropdown class="nav-item dropdown pointer">
-        <a class="nav-link dropdown-toggle" ngbDropdownToggle data-toggle="dropdown" role="button" aria-expanded="false"
-          href="javascript:void(0);"><i class="fa fa-heartbeat"></i> Pranayama</a>
-        <ul class="dropdown-menu" ngbDropdownMenu>
-          <li>
-            <a class="dropdown-item" routerLink="pranayama/userManual">Guide d'utilisation</a>
-          </li>
-          <li>
-            <a class="dropdown-item" routerLink="pranayama/tuning/start-tuning">Réglage</a>
-          </li>
-          <li>
-            <a class="dropdown-item" routerLink="pranayama/practice">Pratique</a>
-          </li>
-        </ul>
-      </li>
-    </ul>
-    <ul class="nav navbar-nav ml-auto">
-      <li class="nav-item">
-        <a class="nav-link" routerLink='/signUp'><i class="fa fa-user-plus"></i> Sign Up</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink='/login'><i class="fa fa-sign-in"></i> Login</a>
-      </li>
-    </ul>
-  </nav>
+  <app-header></app-header>
   <br>
-  <router-outlet></router-outlet>
-  <br>
-  <footer>
-    <div class="mini-footer">
-      <div class="col-sm-12">
-        <div class="copyright-text">
-          <p>© 2018
-            <a>DigiPro</a>. All rights reserved. Created by
-            <a>AazzTech</a>
-          </p>
-        </div>
-      </div>
-    </div>
-  </footer>
+  <router-outlet class = "content"></router-outlet>
+  <app-footer></app-footer>
 </div>

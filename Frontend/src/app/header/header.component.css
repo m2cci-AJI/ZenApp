@@ -1,0 +1,12 @@
+
+.logo {
+  float: left;
+}
+
+.navbar {
+  flex-shrink: 0;
+}
+
+#dropdown1, #dropdown2{
+  z-index: 10000;
+}
