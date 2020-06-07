@@ -9,11 +9,13 @@ import { HomeComponent } from './home/home.component';
 import { PranayamaService } from './pranayama/pranayama.service';
 import { CommentComponent } from './comment/comment.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    CommentComponent
   ],
   imports: [
     BrowserModule,
@@ -21,8 +23,10 @@ import { FormsModule } from '@angular/forms';
     AngularFontAwesomeModule,
     PranayamaModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
+  entryComponents: [CommentComponent],
   providers: [PranayamaService],
   bootstrap: [AppComponent]
 })

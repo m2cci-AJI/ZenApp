@@ -5,13 +5,15 @@ import { PracticeComponent } from './practice/practice.component';
 import { RouterModule } from '@angular/router';
 import { paranayamaRoutes } from './pranayama.routes';
 import { TuningModule } from './tuning/tuning.module';
+import { MatDialogModule } from '@angular/material';
 
 @NgModule({
   declarations: [UserManualComponent, PracticeComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(paranayamaRoutes),
-    TuningModule
+    TuningModule,
+    MatDialogModule
   ]
 })
 
