@@ -1,0 +1,36 @@
+<div class="container">
+  <div id="modal-content-wrapper">
+    <header id="modal-header">
+      <h3 *ngIf = "!changeTitleWindow">Ajoutez un commentaire</h3>
+      <h3 *ngIf = "changeTitleWindow">Editez un commentaire</h3>
+    </header>
+    <form #f = "ngForm" (ngSubmit)="onComment(f)" class="form-horizontal">
+      <section id="modal-body">
+        <div class="form-group form-group-sm">
+          <label class="col-sm-2 control-label">Sensations: </label>
+          <div class="col-sm-12">
+            <textarea class="form-control" name="sensations" [(ngModel)] = "sensations" placeholder = "Entrez vos commentaires..." required></textarea>
+          </div>
+        </div>
+        <div class="form-group form-group-sm">
+          <label class="col-sm-2 control-label">Emotions: </label>
+          <div class="col-sm-12">
+            <textarea class="form-control" name="emotions" [(ngModel)] = "emotions" placeholder = "Entrez vos commentaires..." required></textarea>
+          </div>
+        </div>
+        <div class="form-group form-group-sm">
+          <label class="col-sm-2 control-label">Pensées: </label>
+          <div class="col-sm-12">
+            <textarea class="form-control" name="pensees" [(ngModel)] = "pensees" placeholder = "Entrez vos commentaires..." required></textarea>
+          </div>
+        </div>
+      </section>
+      <footer id="modal-footer">
+        <button type="click" class="btn btn-sm btn-danger float-left" (click)="closeModal()"><i class="fa fa-ban"></i> Annuler</button>
+        <button [disabled] = "f.invalid" type="submit" class="btn btn-sm btn-primary float-right"><i class="fa fa-save"></i> Enregister</button>
+      </footer>
+    </form>
+  </div>
+</div>
+
+

@@ -7,6 +7,8 @@ import { PranayamaModule } from './pranayama/pranayama.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HomeComponent } from './home/home.component';
 import { PranayamaService } from './pranayama/pranayama.service';
+import { CommentComponent } from './comment/comment.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { PranayamaService } from './pranayama/pranayama.service';
     AppRoutingModule,
     AngularFontAwesomeModule,
     PranayamaModule,
-    NgbModule
+    NgbModule,
+    FormsModule
   ],
   providers: [PranayamaService],
   bootstrap: [AppComponent]
