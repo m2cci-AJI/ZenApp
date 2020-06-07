@@ -1,110 +1,103 @@
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-md-7">
-      <div class="card border-dark mb-3" *ngIf="repirationOutput === 'Equilibré'">
-        <div class="card-header text-center">
-          <h3>Cohérence cardiaque</h3>
-        </div>
-        <div class="card-body">
-          <div class="row">
-            <div id="animeDemo">
-              <svg width="500" height="510">
-                <rect id="rect" x="267" y="10" width="65px" height="500"
-                  style="fill:#d6d6c2;stroke-width:2;stroke-dasharray:none;stroke: none;"></rect>
-              </svg>
-              <section class="stage ball-coh">
-                <figure class="ball bubble"></figure>
-              </section>
-            </div>
-          </div>
-          <br>
-          <div class="row">
-            <div class="rect-time">{{ChronometreMinutes}}:{{ChronometreSecondes}}</div>
-            <button type="button" class="btn btn-outline-danger col-md-2 offset-md-3" (click)="pauseAnimation()">
-              Pause</button>
-            <button type="button" class="btn btn-outline-success col-md-2 offset-md-3" (click)="restartAnimation()"
-              [disabled]="(minutes === 0) && (secondes === 0)"> Play</button>
-          </div>
+<div class="page-practice">
+  <div class="card border-dark" *ngIf="repirationOutput === 'Equilibré'">
+    <div class="card-header text-center">
+      <h4>Cohérence cardiaque</h4>
+    </div>
+    <div class="card-body">
+      <div class="anim-box">
+        <svg id="svgCoh" width="100%" height="100%" viewBox="0 0 600 500" preserveAspectRatio="none">
+          <polygon points="310,50 310,420"
+          style="fill:none;stroke:#d6d6c2;stroke-width:12%;stroke-dasharray:none;" />
+        </svg>
+        <div class="ball-coh">
+          <div class="ball"></div>
         </div>
       </div>
-      <div class="card border-dark mb-3" *ngIf="repirationOutput === 'Calmante'">
-        <div class="card-header text-center">
-          <h3>Respiration calmante</h3>
-        </div>
-        <div class="card-body">
-          <div class="row">
-            <div id="animeDemo">
-              <svg width="600" height="300">
-                <polygon points="110,250 310,50 510,250"
-                  style="fill:none;stroke:#d6d6c2;stroke-width:60;stroke-dasharray:none;" />
-              </svg>
-              <section class="stage ball-calm">
-                <figure class="ball bubble"></figure>
-              </section>
-            </div>
-          </div>
-          <br>
-          <div class="row">
-            <div class="rect-time">{{ChronometreMinutes}}:{{ChronometreSecondes}}</div>
-            <button type="button" class="btn btn-outline-danger col-md-2 offset-md-3" (click)="pauseAnimation()">
-              Pause</button>
-            <button type="button" class="btn btn-outline-success col-md-2 offset-md-3" (click)="restartAnimation()"
-              [disabled]="(minutes === 0) && (secondes === 0)"> Play</button>
-          </div>
-        </div>
-      </div>
-      <div class="card border-dark mb-3" *ngIf="repirationOutput === 'Dynamisante'">
-        <div class="card-header text-center">
-          <h3>Respiration dynamisante</h3>
-        </div>
-        <div class="card-body">
-          <div class="row">
-            <div id="animeDemo">
-              <svg width="600" height="300">
-                <polygon points="310,250 110,50 510,50"
-                  style="fill:none;stroke:#d6d6c2;stroke-width:60;stroke-dasharray:none;" />
-              </svg>
-              <section class="stage ball-dyn">
-                <figure class="ball bubble"></figure>
-              </section>
-            </div>
-          </div>
-          <br>
-          <div class="row">
-            <div class="rect-time">{{ChronometreMinutes}}:{{ChronometreSecondes}}</div>
-            <button type="button" class="btn btn-outline-danger col-md-2 offset-md-3" (click)="pauseAnimation()">
-              Pause</button>
-            <button type="button" class="btn btn-outline-success col-md-2 offset-md-3" (click)="restartAnimation()"
-              [disabled]="(minutes === 0) && (secondes === 0)"> Play</button>
-          </div>
-        </div>
-      </div>
-      <div class="card border-dark mb-3" *ngIf="repirationOutput === 'Carré'">
-        <div class="card-header text-center">
-          <h3>Respiration carrée</h3>
-        </div>
-        <div class="card-body">
-          <div class="row">
-            <div id="animeDemo">
-              <svg width="600" height="400">
-                <rect x="170" y="50" width="300" height="300"
-                  style="fill:none;stroke:#d6d6c2;stroke-width:60;stroke-dasharray:none;" />
-              </svg>
-              <section class="stage ball-carre">
-                <figure class="ball bubble"></figure>
-              </section>
-            </div>
-          </div>
-          <br>
-          <div class="row">
-            <div class="rect-time">{{ChronometreMinutes}}:{{ChronometreSecondes}}</div>
-            <button type="button" class="btn btn-outline-danger col-md-2 offset-md-3" (click)="pauseAnimation()">
-              Pause</button>
-            <button type="button" class="btn btn-outline-success col-md-2 offset-md-3" (click)="restartAnimation()"
-              [disabled]="(minutes === 0) && (secondes === 0)"> Play</button>
-          </div>
-        </div>
+      <br>
+      <br>
+      <div class="buttons d-flex flex-row align-items-stretch flex-nowrap justify-content-between">
+        <div class="button rect-time"> {{ChronometreMinutes}}:{{ChronometreSecondes}} </div>
+        <button class = "button" type="button" class="btn btn-sm btn-outline-danger" (click)="pauseAnimation()" [disabled]="!disabledPlay">
+          Pause</button>
+        <button class = "button" type="button" class="btn btn-sm btn-outline-success" (click)="restartAnimation()"
+          [disabled]="(((minutes === 0) && (secondes === 0)) || (disabledPlay))"> Play</button>
       </div>
     </div>
   </div>
+  <div class="card border-dark" *ngIf="repirationOutput === 'Calmante'">
+    <div class="card-header text-center">
+      <h4>Respiration calmante</h4>
+    </div>
+    <div class="card-body">
+      <div class="anim-box">
+        <svg id="svgCalm" width="100%" height="100%" viewBox="0 0 600 500" preserveAspectRatio="none">
+          <polygon points="110,380 310,100 510,380"
+            style="fill:none;stroke:#d6d6c2;stroke-width:12%;stroke-dasharray:none;" />
+        </svg>
+        <div class="ball-calm">
+          <div class="ball"></div>
+        </div>
+      </div>
+      <div class="buttons d-flex justify-content-between">
+        <div class="button rect-time"> {{ChronometreMinutes}}:{{ChronometreSecondes}} </div>
+        <button type="button" class="btn btn-sm btn-outline-danger" (click)="pauseAnimation()" [disabled]="!disabledPlay">
+          Pause</button>
+        <button type="button" class="btn btn-sm btn-outline-success" (click)="restartAnimation()"
+          [disabled]="(((minutes === 0) && (secondes === 0)) || (disabledPlay))"> Play</button>
+      </div>
+    </div>
+  </div>
+  <div class="card border-dark mb-3" *ngIf="repirationOutput === 'Dynamisante'">
+    <div class="card-header text-center">
+      <h4>Respiration dynamisante</h4>
+    </div>
+    <div class="card-body">
+        <div class="anim-box">
+          <svg id = "svgDyn" width="100%" height="100%" viewBox="0 0 600 500" preserveAspectRatio="none">
+            <polygon points="310,380 110,100 510,100"
+              style="fill:none;stroke:#d6d6c2;stroke-width:12%;stroke-dasharray:none;" />
+          </svg>
+          <div class="ball-dyn">
+            <div class="ball"></div>
+          </div>
+        </div>
+      <div class="buttons d-flex justify-content-between">
+        <div class="button rect-time"> {{ChronometreMinutes}}:{{ChronometreSecondes}} </div>
+        <button type="button" class="btn btn-sm btn-outline-danger" (click)="pauseAnimation()" [disabled]="!disabledPlay">
+          Pause</button>
+        <button type="button" class="btn btn-sm btn-outline-success" (click)="restartAnimation()"
+          [disabled]="(((minutes === 0) && (secondes === 0)) || (disabledPlay))"> Play</button>
+      </div>
+    </div>
+  </div>
+  <div class="card border-dark mb-3" *ngIf="repirationOutput === 'Carré'">
+    <div class="card-header text-center">
+      <h4>Respiration carrée</h4>
+    </div>
+    <div class="card-body">
+        <div class="anim-box">
+          <svg id="svgCarre" width="100%" height="100%">
+            <rect x="30%" y="10%" width="40%" height="50%"
+              style="fill:none;stroke:#d6d6c2;stroke-width:12%;stroke-dasharray:none;" />
+          </svg>
+          <div class="ball-carre">
+            <div class="ball"></div>
+          </div>
+        </div>
+      <div class = "buttons d-flex justify-content-between">
+        <div class="button rect-time" style = "flex-shrink: 2"> {{ChronometreMinutes}}:{{ChronometreSecondes}} </div>
+        <button type="button" style = "flex-shrink: 2" class="btn btn-sm btn-outline-danger" (click)="pauseAnimation()"
+          [disabled]="!disabledPlay">
+          Pause</button>
+        <button type="button" style = "flex-shrink: 2" class="btn btn-sm btn-outline-success" (click)="restartAnimation()"
+          [disabled]="(((minutes === 0) && (secondes === 0)) || (disabledPlay))"> Play</button>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div id="last-line" class="row justify-content-center">
+    <button type="button" [disabled]="!endTime" class="btn btn-info" (click)="editComment()">Editez un
+      commentaire</button>
+  </div>
 </div>
+<br>
