@@ -7,14 +7,16 @@ import { calendrierRoutes } from './calendrier.routes';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { VisTimelineDirective } from './timeline/vis-timeline.directive';
 
 @NgModule({
-  declarations: [TimelineComponent, WindowCommentComponent, WindowTimeComponent],
+  declarations: [TimelineComponent, WindowCommentComponent, WindowTimeComponent, VisTimelineDirective],
   imports: [
     CommonModule,
     RouterModule.forChild(calendrierRoutes),
     FormsModule,
     NgbModule
-  ]
+  ],
+  entryComponents: [WindowTimeComponent, WindowCommentComponent]
 })
 export class CalendrierModule { }

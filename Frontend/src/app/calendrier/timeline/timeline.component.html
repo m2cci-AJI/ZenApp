@@ -1,1 +1,15 @@
-<p>timeline works!</p>
+<div class="d-flex flex-column align-items-center justify-content-start">
+    <div class="d-flex flex-row flex-nowrap justify-content-center">
+      <button type="button" class="btn btn-outline-info btn-lg" (click)="centrer()" title="Centrez la timeline"><i
+          class="fa fa-bullseye"></i></button>
+      <button type="button" class="btn btn-outline-info btn-lg" (click)="ajuster()" title="Ajuster la timeline"><i
+          class="fa fa-align-justify"></i></button>
+      <button type="button" class="btn btn-outline-info btn-lg" (click)="setWindow()"
+        title="Centrez la timeline sur un intervalle du temps"><i class="fa fa-arrows-alt"></i></button>
+    </div>
+    <br>
+    <br>
+    <div class = "align-self-stretch" #VisTimeLine id="visualisation"></div>
+    <br>
+    <br>
+</div>

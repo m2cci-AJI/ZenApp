@@ -1,1 +1,48 @@
-/* You can add global styles to this file, and also import other style files */
+.vis-item.green {
+    border-color: green;
+    background-color: greenyellow;
+    color: white;
+  }
+  
+  button:disabled {
+    cursor: not-allowed;
+    pointer-events: all !important;
+  }
+  
+  p[class = type] {
+    font-size: 12pt;
+    font-weight: bold;
+  }
+  
+  p[class = sous-type] {
+    font-size: 12pt;
+    font-style: italic;
+  }
+  
+  p[class = 'duration float-right'] {
+    font-size: 12pt;
+    font-weight: bold;
+  }
+  
+  .vis-item.vis-dot {
+    border-width: 100px;
+    border-radius: 100px;
+  }
+  
+  .vis-item.red {
+    border-color: darkred;
+    background-color: red;
+    color: white;
+  }
+  
+  .vis-item.vis-selected {
+    background-color: white;
+    border-color: black;
+    color: black;
+    box-shadow: 0 0 10px gray;
+  }
+  
+  .fa .fa-user-circle{
+    font-size: 25px;
+  }
+  
