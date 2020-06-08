@@ -1,1 +1,35 @@
-<p>practice works!</p>
+<div class="row">
+    <div class="col-md-4" *ngFor = "let meditation of meditations; let i = index;">
+      <div class="card border-dark">
+        <div class="card-body">
+          <div class="row">
+            <div class="col rounded-image">
+              <img src="../../../assets/img/{{meditation.image}}" width="300px" height="300px">
+            </div>
+            <div class="col">
+              <h3>Détails</h3>
+              <hr>
+              <label>Catégorie: </label>
+              <p> {{meditation.typeMeditation}}</p>
+              <hr>
+              <label>Description: </label> <a href="{{meditation.description}}"> Cliquez-ici</a>
+              <hr>
+              <label>Durée: </label>
+              <p> {{meditation.durationSession}} min</p>
+              <hr>
+              <div>
+                <button type = "button" [disabled] = "!endAudio(i)" class = "btn btn-info float-right" (click) = "editComment()">Editez un commentaire</button>
+              </div>
+            </div>
+          </div>
+          <br>
+          <br>
+          <div class="row">
+              <audio class="col-12" id="player" controls preload="true" (ended) = "audioEnded(i)">
+                <source src="../../../assets/audio/{{meditation.audio}}">
+              </audio>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
