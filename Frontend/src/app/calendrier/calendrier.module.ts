@@ -3,13 +3,14 @@ import { CommonModule } from '@angular/common';
 import { TimelineComponent } from './timeline/timeline.component';
 import { WindowCommentComponent } from './window-comment/window-comment.component';
 import { WindowTimeComponent } from './window-time/window-time.component';
-
-
+import { calendrierRoutes } from './calendrier.routes';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [TimelineComponent, WindowCommentComponent, WindowTimeComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule.forChild(calendrierRoutes)
   ]
 })
 export class CalendrierModule { }
