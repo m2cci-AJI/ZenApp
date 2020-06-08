@@ -1,14 +1,14 @@
 # ZenRelax
 
-Depuis sa création en 2020 par l'instructeur Ahmed Jemai, l'application ZenRelax vous permet de limiter le stress et d'installer le calme et la tranquilité en quelques minutes. Elle a été mise au point graçe aux différents ouvrages élaborés par le fameux psychiatre Christophe Andrée sur le sujet de la méditation. Cette application est d'utilisation très simple, efficace et gratuite. Elle a été créée dans le cadre d'aider les personnes anxieuses pendant la période de confinement pour gérer leurs stresses.
+Depuis sa création en 2020 par l'instructeur Ahmed Jemai, l'application  **ZenRelax** vous permet de limiter le stress et d'installer le calme et la tranquilité en quelques minutes. Elle a été mise au point graçe aux différents ouvrages élaborés par le fameux psychiatre Christophe Andrée sur le sujet de la méditation. Cette application est d'utilisation très simple, efficace et gratuite. Elle a été créée dans le cadre d'aider les personnes anxieuses pendant la période de confinement pour gérer leurs stresses.
 
 # Contenu de ZenRelax:
 
-L' application ZenRelax comporte essentiellement deux types de pratiques méditatives:
+L' application **ZenRelax** comporte essentiellement deux types de pratiques méditatives:
 
-Pranayama: C'est une branche de Yoga basée sur la respiration. Elle utilise le lien entre notre état mental et la respiration. Vous avez peut-être remarqué que, lorsque vous êtes stressés, la respiration s'accélère. A l'inverse, un état d'esprit zen génère une respiration profonde et calme. Pranayma agit sur le souffle permettant ainsi de calmer les agitations du mental.
+* **Pranayama**: C'est une branche de Yoga basée sur la respiration. Elle utilise le lien entre notre état mental et la respiration. Vous avez peut-être remarqué que, lorsque vous êtes stressés, la respiration s'accélère. A l'inverse, un état d'esprit zen génère une respiration profonde et calme. Pranayma agit sur le souffle permettant ainsi de calmer les agitations du mental. Pour en savoir plus, consultez ce lien: [https://www.elle.fr/Minceur/Yoga/Pranayama-3637349](https://www.elle.fr/Minceur/Yoga/Pranayama-3637349).
 
-Méditation: C'est une pratique millénaire, qui a vu le jour en Inde il y a plus de cinq mille ans. Elle consiste à s'entraîner à maintenir son attention et à empêcher son esprit de se laisser emporter par les pensées qui surgissent sans arrêt.
+* **Méditation**: C'est une pratique millénaire, qui a vu le jour en Inde il y a plus de cinq mille ans. Elle consiste à s'entraîner à maintenir son attention et à empêcher son esprit de se laisser emporter par les pensées qui surgissent sans arrêt.  Pour en savoir plus, consultez ce lien: [https://www.nicolebordeleau.com/meditation/](https://www.nicolebordeleau.com/meditation/).
 
 ---
 
@@ -50,7 +50,7 @@ git@github.com:m2cci-AJI/ZenApp.git
 
 ```
 Par la suite, passons à lancer notre application ZenRelax sur votre navigateur. En fait, cette application comporte principalement deux dossiers indépendants: Frontend et Backend, avec leurs propres fichiers de configuration package.json. Tout d'abord, il faut exécuter la commande suivante dans les deux terminaux associés à deux dossiers:
-```
+```bash
 npm install
 
 ```
@@ -59,7 +59,7 @@ Cette commande permet d'installer les dépendances de deux dossiers définits da
 Afin de lancer l'application angular localement sur votre serveur sur le port (par défaut) 4200, vous devez vous localiser sur le doosier Frontend et lancez la commande `ng serve --open` sur le terminal. L'argument `--open` a été ajouté afin de permettre au serveur de reconstruire automatiquement l'application lorsque une modification sur le code source a été survenue. 
 
 Afin de lancer le serveur express sur le navigateur sur le port 4000, vous devez vous positionner sur le dossier Backend et exécuter la commande suivante:
-```
+```bash
 npm run dev
 
 ```
@@ -73,6 +73,7 @@ Cette commande exécute le script `dev` définit dans le fichier package.json, c
 ---
 
 Finalement, je vous souhaite une expérience de méditation agréable, réjouissez-vous !
+<img src = "Frontend/src/assets/img/meditation_pensees.jpg" width = 300>
 
 
 
