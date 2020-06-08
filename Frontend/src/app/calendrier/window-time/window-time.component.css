@@ -1,0 +1,22 @@
+.alert {
+    color: red;
+  }
+  
+  h3 {
+    font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+  }
+  
+  @media (max-width: 600px) {
+    #modal-content-wrapper {
+      width: 100%;
+      height: auto;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    #modal-content-wrapper {
+      width: 100%;
+      height: auto;
+    }
+  }
+  

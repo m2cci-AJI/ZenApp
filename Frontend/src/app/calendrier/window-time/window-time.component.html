@@ -1,1 +1,39 @@
-<p>window-time works!</p>
+
+
+  <div id="modal-content-wrapper">
+    <header id="modal-header">
+      <h3>Entrez les deux dates de l'intervalle</h3>
+    </header>
+    <form #f = "ngForm" (ngSubmit)="onWindow(f)" class="form-horizontal">
+      <section id="modal-body">
+        <div class="form-group form-group-sm">
+          <label class="col-sm-4 control-label">Date de départ:</label>
+          <div class="input-group">
+            <input #datestart id="start_date" class="form-control" placeholder="yyyy-mm-dd" name="dp3" ngbDatepicker
+              #dp3="ngbDatepicker" ngModel>
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary calendar" (click)="dp3.toggle()" type="button"></button>
+            </div>
+          </div>
+        </div>
+        <div class="form-group form-group-sm">
+          <label class="col-sm-4 control-label">Date de fin:</label>
+          <div class="input-group">
+            <input #dateend id="end_date" class="form-control" placeholder="yyyy-mm-dd" name="dp4" ngbDatepicker
+              #dp4="ngbDatepicker" ngModel>
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary calendar" (click)="dp4.toggle()" type="button"></button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class = "alert" *ngIf = "CompareDates(datestart.value, dateend.value)">
+           <label>Il faut avoir une date de fin supérieure à la date de départ !</label>
+      </div>
+      <footer id="modal-footer">
+        <button type="button" class="btn btn-sm btn-danger float-left" (click) = "closeModal()"><i class="fa fa-ban"></i> Annulez</button>
+        <button [disabled] = "f.invalid || CompareDates(datestart.value, dateend.value)" type="submit" class="btn btn-sm btn-primary float-right"><i class="fa fa-save"></i> Enregistez</button>
+      </footer>
+    </form>
+  </div>
+
