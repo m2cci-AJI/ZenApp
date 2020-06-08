@@ -4,13 +4,15 @@ import { paranayamaRoutes } from './pranayama/pranayama.routes';
 import { homeRoute } from './home/home.route';
 import { meditationRoutes } from './meditation/meditation.routes';
 import { calendrierRoutes } from './calendrier/calendrier.routes';
+import { signupRoutes } from './sign-up/isgn-up.routes';
 
 const routes: Routes = [
   homeRoute,
   {path: '', redirectTo: 'home' , pathMatch: 'full'},
   ...paranayamaRoutes,
   ...meditationRoutes,
-  ...calendrierRoutes
+  ...calendrierRoutes,
+  ...signupRoutes
 ];
 
 @NgModule({

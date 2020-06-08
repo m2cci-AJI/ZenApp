@@ -14,6 +14,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { MeditationModule } from './meditation/meditation.module';
 import { CalendrierModule } from './calendrier/calendrier.module';
+import { SignUpModule } from './sign-up/sign-up.module';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { CalendrierModule } from './calendrier/calendrier.module';
     CalendrierModule,
     NgbModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    SignUpModule
   ],
   entryComponents: [CommentComponent],
   providers: [PranayamaService],
