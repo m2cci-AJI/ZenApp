@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { MeditationModule } from './meditation/meditation.module';
+import { CalendrierModule } from './calendrier/calendrier.module';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { MeditationModule } from './meditation/meditation.module';
     AngularFontAwesomeModule,
     PranayamaModule,
     MeditationModule,
+    CalendrierModule,
     NgbModule,
     FormsModule,
     HttpClientModule
