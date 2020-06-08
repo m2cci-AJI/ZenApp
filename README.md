@@ -73,8 +73,10 @@ Cette commande exécute le script `dev` définit dans le fichier package.json, c
 ---
 
 Finalement, je vous souhaite une expérience de méditation agréable, réjouissez-vous !
+<p align="center">
+  <img src = "Frontend/src/assets/img/meditation_pensees.jpg" width = 500>
+</p>
 
-<img src = "Frontend/src/assets/img/meditation_pensees.jpg" width = 500>
 
 
 
