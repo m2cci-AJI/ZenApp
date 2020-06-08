@@ -1,0 +1,114 @@
+<div class="d-flex flex-column align-items-center justify-content-start">
+    <div class="card border-dark">
+      <div class="card-header text-center">
+        <h3>S'inscrire</h3>
+      </div>
+      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+        <div class="card-body">
+          <div class="control-group d-flex flex-row align-items-start">
+            <label class="control-label col-md-6 text-md-right">Nom et prénom</label>
+            <div class="d-flex flex-column">
+              <input type="text" placeholder="Entrer votre nom et prénom" formControlName="name">
+              <mat-error class="align-self-start"
+                *ngIf="contactForm.controls.name?.invalid && (contactForm.controls.name.dirty || contactForm.controls.name.touched)">
+                <div *ngIf="contactForm.controls.name?.errors.required">
+                  Nom et prénom sont obligatoires.
+                </div>
+              </mat-error>
+            </div>
+          </div>
+          <br>
+          <div class="control-group d-flex flex-row align-items-start">
+            <label class="control-label col-md-6 text-md-right">Login</label>
+            <div class="d-flex flex-column">
+              <input type="text" placeholder="Choisir un login" formControlName="login">
+              <mat-error class="align-self-start"
+                *ngIf="contactForm.controls.login?.invalid && (contactForm.controls.login.dirty || contactForm.controls.login.touched)">
+                <div *ngIf="contactForm.controls.login?.errors.required">
+                  Login est obligatoire.
+                </div>
+              </mat-error>
+            </div>
+          </div>
+          <br>
+          <div class="control-group d-flex flex-row align-items-start">
+            <label class="control-label col-md-6 text-md-right">Date de naissance</label>
+            <div class="d-flex flex-column">
+              <input type="text" placeholder="Entrer votre date de naissance" formControlName="birthday">
+              <mat-error class="align-self-start"
+                *ngIf="contactForm.controls.birthday?.invalid && (contactForm.controls.birthday.dirty || contactForm.controls.birthday.touched)">
+                <div *ngIf="contactForm.controls.birthday?.errors.required">
+                  Date de naissance est obligatoire.
+                </div>
+              </mat-error>
+            </div>
+          </div>
+          <br>
+          <div class="control-group d-flex flex-row align-items-start">
+            <label class="control-label col-md-6 text-md-right">Email</label>
+            <div class="d-flex flex-column">
+              <input type="text" placeholder="Entrer votre adresse email" formControlName="email">
+              <mat-error class="align-self-start"
+                *ngIf="contactForm.controls.email?.invalid && (contactForm.controls.email.dirty || contactForm.controls.email.touched)">
+                <div *ngIf="contactForm.controls.email?.errors.required">
+                  Email est obligatoire.
+                </div>
+                <div *ngIf="contactForm.controls.email?.errors?.email">
+                  Email n'est pas valide.
+                </div>
+              </mat-error>
+            </div>
+          </div>
+          <br>
+          <div class="control-group d-flex flex-row align-items-start">
+            <label class="control-label col-md-6 text-md-right">Mot de passe</label>
+            <div class="d-flex flex-column">
+              <input type="password" placeholder="Entrer votre mot de passe" formControlName="MPasse">
+              <mat-error class="align-self-start"
+                *ngIf="contactForm.controls.MPasse?.invalid && (contactForm.controls.MPasse.dirty || contactForm.controls.MPasse.touched)">
+                <div *ngIf="contactForm.controls.MPasse?.errors.required">
+                  Password est obligatoire.
+                </div>
+                <div *ngIf="contactForm.controls.MPasse?.invalid">
+                  Password doit contenir 8 caractères.
+                </div>
+              </mat-error>
+            </div>
+          </div>
+          <br>
+          <div class="control-group d-flex flex-row align-items-start">
+            <label class="control-label col-md-6 text-md-right">Mot de passe de confirmation</label>
+            <div class="d-flex flex-column">
+              <input kendoTextBox type="password" placeholder="Confirmer votre mot de passe" formControlName="CMPasse">
+              <mat-error class="align-self-start"
+                *ngIf="contactForm.controls.CMPasse?.invalid && (contactForm.controls.CMPasse.dirty || contactForm.controls.CMPasse.touched)">
+                <div *ngIf="contactForm.controls.CMPasse?.errors.required">
+                  Password est obligatoire.
+                </div>
+                <div *ngIf="contactForm.controls.CMPasse?.invalid">
+                  Password doit contenir 8 caractères.
+                </div>
+                <div *ngIf="contactForm.controls.CMPasse?.errors.mustMatch">
+                  Password n'est pas conforme.
+                </div>
+              </mat-error>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="buttons d-flex flex-row justify-content-between">
+            <button type="submit" [disabled]="validForm()" class="btn btn-success float-left"><i class="fa fa-save"></i>
+              Enregister</button>
+            <button type="button" class="btn btn-danger float-right" (click)="onGoBack()"><i class="fa fa-ban"></i>
+              Annuler</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div id="footer-card" class="card text-white bg-danger" *ngIf="messageError">
+      <p>Oups, nous avons détecté une erreur...</p>
+      <p>{{messageError}}</p>
+    </div>
+    <br>
+  </div>
+  

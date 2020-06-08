@@ -15,6 +15,7 @@ import { HeaderComponent } from './header/header.component';
 import { MeditationModule } from './meditation/meditation.module';
 import { CalendrierModule } from './calendrier/calendrier.module';
 import { StatisticsModule } from './statistics/statistics.module';
+import { SignUpModule } from './sign-up/sign-up.module';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { StatisticsModule } from './statistics/statistics.module';
     StatisticsModule,
     NgbModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    SignUpModule
   ],
   entryComponents: [CommentComponent],
   providers: [PranayamaService],

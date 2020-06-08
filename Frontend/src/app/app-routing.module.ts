@@ -5,6 +5,7 @@ import { homeRoute } from './home/home.route';
 import { meditationRoutes } from './meditation/meditation.routes';
 import { calendrierRoutes } from './calendrier/calendrier.routes';
 import { statisticsRoutes } from './statistics/statistics.routes';
+import { signupRoutes } from './sign-up/isgn-up.routes';
 
 const routes: Routes = [
   homeRoute,
@@ -12,7 +13,8 @@ const routes: Routes = [
   ...paranayamaRoutes,
   ...meditationRoutes,
   ...calendrierRoutes,
-  ...statisticsRoutes
+  ...statisticsRoutes,
+  ...signupRoutes
 ];
 
 @NgModule({
