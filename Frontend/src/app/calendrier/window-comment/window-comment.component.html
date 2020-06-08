@@ -1,1 +1,28 @@
-<p>window-comment works!</p>
+
+  <div id="modal-content-wrapper">
+    <header id="modal-header">
+      <h3>Vos commentaires</h3>
+    </header>
+      <section id="modal-body">
+        <div class="emotion-section">
+          <label class="col-sm-2 control-label">Sensations: </label>
+          <div class="col-sm-12">{{sensations}}</div>
+        </div>
+        <div class="emotions-section">
+          <label class="col-sm-2 control-label">Emotions: </label>
+          <div class="col-sm-12">{{emotions}}</div>
+        </div>
+        <div class="pensees-section">
+          <label class="col-sm-2 control-label">Pensées: </label>
+          <div class="col-sm-12">{{pensees}}</div>
+        </div>
+      </section>
+      <footer id="modal-footer">
+        <br>
+        <button type="button" class="btn btn-danger float-right" (click) = "closeModal()"><i class="fa fa-ban"></i> Fermez</button>
+      </footer>
+  </div>
+
+
+
+
