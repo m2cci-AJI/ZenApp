@@ -1,0 +1,141 @@
+<div class="d-flex flex-column align-items-center justify-content-start">
+    <ejs-dashboardlayout #editLayout [cellSpacing]="cellSpacing" [columns]="6" [cellAspectRatio]="cellAspectRatio"
+      [allowFloating]="allowFloating" [mediaQuery]="mediaQuery" [allowResizing]="allowResizing"
+      [resizableHandles]="resizableHandles">
+      <e-panels>
+        <e-panel [sizeX]="2" [sizeY]="1" [row]="0" [col]="0">
+          <ng-template #header>
+            <div> Profil d'utilisateur </div>
+          </ng-template>
+          <ng-template #content>
+            <div id="panel-profil">
+              <img src="../../../assets/img/logo_user.svg" width="200" height="auto">
+              <div class="profil">
+                <br>
+                <h3>Détails</h3>
+                <hr>
+                <label>Nom & prénom: </label>
+                <span> {{name}}</span>
+                <hr>
+                <label>Email: </label>
+                <span> {{email}}</span>
+                <hr>
+                <label>Date de naissance: </label>
+                <span> {{birthday}}</span>
+                <hr>
+              </div>
+            </div>
+          </ng-template>
+        </e-panel>
+        <e-panel [sizeX]="2" [sizeY]="1" [row]="0" [col]="2">
+          <ng-template #header>
+            <div> Nombre d'utilisateurs </div>
+          </ng-template>
+          <ng-template #content id="users">
+            <circle-progress [percent]="numberUsers" [radius]="100" [outerStrokeWidth]="16" [innerStrokeWidth]="8"
+              [outerStrokeColor]="'#78C000'" [innerStrokeColor]="'#8f56ad'" [animation]="true" [animationDuration]="300"
+              [showUnits]="false" [showSubtitle]="false" [responsive]="true">
+            </circle-progress>
+          </ng-template>
+        </e-panel>
+        <e-panel [sizeX]="2" [sizeY]="1" [row]="0" [col]="4">
+          <ng-template #header>
+            <div> Nombre de connexion </div>
+          </ng-template>
+          <ng-template #content id="connection">
+            <circle-progress [percent]="numberConnectionPerWeek" [radius]="100" [outerStrokeWidth]="16"
+              [innerStrokeWidth]="8" [outerStrokeColor]="'#78C000'" [innerStrokeColor]="'rgb(211, 84, 0)'"
+              [animation]="true" [animationDuration]="300" [showUnits]="false" [showSubtitle]="false"
+              [responsive]="true">
+            </circle-progress>
+          </ng-template>
+        </e-panel>
+        <e-panel [sizeX]="3" [sizeY]="1" [row]="1" [col]="0">
+          <ng-template #header>
+            <div> Tableau de séances de méditation </div>
+          </ng-template>
+          <ng-template #content>
+            <div class="table-container mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource" matSort>
+                <ng-container matColumnDef="start">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header>Date de la séance</th>
+                  <td mat-cell *matCellDef="let element">{{element.start | date}}</td>
+                </ng-container>
+                <ng-container matColumnDef="typeYoga">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header>Type de méditation</th>
+                  <td mat-cell *matCellDef="let element">{{element.typeYoga}}</td>
+                </ng-container>
+                <ng-container matColumnDef="sousTypeYoga">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header>Sous-Type de méditation</th>
+                  <td mat-cell *matCellDef="let element">{{element.sousTypeYoga}}</td>
+                </ng-container>
+                <ng-container matColumnDef="durationYoga">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header>Durée de la séance</th>
+                  <td mat-cell *matCellDef="let element">{{element.durationYoga}}</td>
+                </ng-container>
+                <ng-container matColumnDef="indeX">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header>Commentaires</th>
+                  <td mat-cell *matCellDef="let element"><a [routerLink]="" queryParamsHandling="preserve"
+                      (click)="getComment(element.indeX)">cliquez-ici</a></td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+              </table>
+              <mat-paginator [pageSizeOptions]="[3, 10, 15]" [length]="length" [pageSize]="pageSize"
+                showFirstLastButtons>
+              </mat-paginator>
+            </div>
+          </ng-template>
+        </e-panel>
+        <e-panel [sizeX]="3" [sizeY]="1" [row]="1" [col]="3">
+          <ng-template #header>
+            <div> Durée et Fréquence journalières de méditation </div>
+          </ng-template>
+          <ng-template #content>
+            <ejs-chart id="lineChartDay" [primaryXAxis]="primaryXAxis" [palettes]="palettes" [zoomSettings]="zoom"
+              [legendSettings]="legend" [crosshair]="crosshair" [tooltip]="tooltip">
+              <e-series-collection>
+                <e-series [dataSource]="lineDataDayFreq" xName="x" yName="y" type="Line" name="Fréquence"
+                  [marker]="marker" width=3> </e-series>
+                <e-series [dataSource]="lineDataDayDur" xName="x" yName="y" type="Line" name="Durée (en minutes)"
+                  [marker]="marker" width=3> </e-series>
+              </e-series-collection>
+            </ejs-chart>
+          </ng-template>
+        </e-panel>
+        <e-panel [sizeX]="3" [sizeY]="1" [row]="2" [col]="0">
+          <ng-template #header>
+            <div> Durée et Fréquence hebdomadaires de méditation</div>
+          </ng-template>
+          <ng-template #content>
+            <ejs-chart id="lineChartWeek" [primaryXAxis]="primaryXAxis" [palettes]="palettes" [zoomSettings]="zoom"
+              [legendSettings]="legend" [crosshair]="crosshair" [tooltip]="tooltip">
+              <e-series-collection>
+                <e-series [dataSource]="lineDataWeekFreq" xName="x" yName="y" type="Line" name="Fréquence"
+                  [marker]="marker" width=3> </e-series>
+                <e-series [dataSource]="lineDataWeekDur" xName="x" yName="y" type="Line" name="Durée (en minutes)"
+                  [marker]="marker" width=3> </e-series>
+              </e-series-collection>
+            </ejs-chart>
+          </ng-template>
+        </e-panel>
+        <e-panel [sizeX]="3" [sizeY]="1" [row]="2" [col]="3">
+          <ng-template #header>
+            <div> Durée et Fréquence mensuelles de méditation</div>
+          </ng-template>
+          <ng-template #content>
+            <ejs-chart id="lineChartMonth" [primaryXAxis]="primaryXAxis" [palettes]="palettes" [zoomSettings]="zoom"
+              [legendSettings]="legend" [crosshair]="crosshair" [tooltip]="tooltip">
+              <e-series-collection>
+                <e-series [dataSource]="lineDataMonthFreq" xName="x" yName="y" type="Line" name="Fréquence"
+                  [marker]="marker" width=3> </e-series>
+                <e-series [dataSource]="lineDataMonthDur" xName="x" yName="y" type="Line" name="Durée (en minutes)"
+                  [marker]="marker" width=3> </e-series>
+              </e-series-collection>
+            </ejs-chart>
+          </ng-template>
+        </e-panel>
+      </e-panels>
+    </ejs-dashboardlayout>
+  </div>
+<br>
