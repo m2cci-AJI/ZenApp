@@ -6,6 +6,10 @@
   mat-error div {
     color: red;
   }
+
+  [class="card-footer"] a label{
+       cursor: pointer;
+  }
   
   @media (max-width: 600px) {
     .card {

@@ -19,6 +19,7 @@ import { SignUpModule } from './sign-up/sign-up.module';
 import { LoginModule } from './login/login.module';
 import { RequestResetPasswordComponent } from './request-reset-password/request-reset-password.component';
 import { MatFormFieldModule } from '@angular/material';
+import { ResponseResetPasswordComponent } from './response-reset-password/response-reset-password.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { MatFormFieldModule } from '@angular/material';
     CommentComponent,
     FooterComponent,
     HeaderComponent,
-    RequestResetPasswordComponent
+    RequestResetPasswordComponent,
+    ResponseResetPasswordComponent
   ],
   imports: [
     BrowserModule,
