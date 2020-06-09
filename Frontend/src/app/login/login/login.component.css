@@ -4,7 +4,11 @@
   }
 
   mat-error div {
-      color: red;
+    color: red;
+  }
+
+  [class="card-footer"] a label{
+       cursor: pointer;
   }
   
   @media (max-width: 600px) {
@@ -12,10 +16,6 @@
       width: 100%;
       height: auto;
     }
-  }
-
-  mat-error div {
-    color: red;
   }
   
   @media (min-width: 768px) {
