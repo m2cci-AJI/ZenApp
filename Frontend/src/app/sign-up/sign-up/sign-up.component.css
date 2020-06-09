@@ -2,6 +2,10 @@
 #footer-card {
     height: 15%;
   }
+
+  mat-error div {
+      color: red;
+  }
   
   @media (max-width: 600px) {
     .card {

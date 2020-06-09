@@ -5,7 +5,7 @@ import { homeRoute } from './home/home.route';
 import { meditationRoutes } from './meditation/meditation.routes';
 import { calendrierRoutes } from './calendrier/calendrier.routes';
 import { statisticsRoutes } from './statistics/statistics.routes';
-import { signupRoutes } from './sign-up/isgn-up.routes';
+import { signupRoutes } from './sign-up/sign-up.routes';
 
 const routes: Routes = [
   homeRoute,
