@@ -8,7 +8,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HomeComponent } from './home/home.component';
 import { PranayamaService } from './pranayama/pranayama.service';
 import { CommentComponent } from './comment/comment.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
@@ -18,6 +18,7 @@ import { StatisticsModule } from './statistics/statistics.module';
 import { SignUpModule } from './sign-up/sign-up.module';
 import { LoginModule } from './login/login.module';
 import { RequestResetPasswordComponent } from './request-reset-password/request-reset-password.component';
+import { MatFormFieldModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,9 @@ import { RequestResetPasswordComponent } from './request-reset-password/request-
     FormsModule,
     HttpClientModule,
     SignUpModule,
-    LoginModule
+    LoginModule,
+    ReactiveFormsModule,
+    MatFormFieldModule
   ],
   entryComponents: [CommentComponent],
   providers: [PranayamaService],
