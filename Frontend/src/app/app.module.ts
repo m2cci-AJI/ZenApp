@@ -17,6 +17,7 @@ import { CalendrierModule } from './calendrier/calendrier.module';
 import { StatisticsModule } from './statistics/statistics.module';
 import { SignUpModule } from './sign-up/sign-up.module';
 import { LoginModule } from './login/login.module';
+import { RequestResetPasswordComponent } from './request-reset-password/request-reset-password.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { LoginModule } from './login/login.module';
     HomeComponent,
     CommentComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    RequestResetPasswordComponent
   ],
   imports: [
     BrowserModule,

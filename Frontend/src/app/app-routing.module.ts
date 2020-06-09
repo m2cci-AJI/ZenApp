@@ -7,8 +7,10 @@ import { calendrierRoutes } from './calendrier/calendrier.routes';
 import { statisticsRoutes } from './statistics/statistics.routes';
 import { signupRoutes } from './sign-up/isgn-up.routes';
 import { loginRoutes } from './login/login.routes';
+import { requestresetpasswordRoute } from './request-reset-password/request-reset-password.route';
 
 const routes: Routes = [
+  requestresetpasswordRoute,
   homeRoute,
   {path: '', redirectTo: 'home' , pathMatch: 'full'},
   ...paranayamaRoutes,
