@@ -163,6 +163,22 @@ export class Application {
                 .catch((err) => res.status(400).json({ err }));
         });
 
+        app.post('/api/session', auth, (req: Request, res: Response, next) => {
+            const yoga = new Yoga({
+                idYogi: req.body.idYogi,
+                typeYoga: req.body.typeYoga,
+                sousTypeYoga: req.body.sousTypeYoga,
+                durationYoga: req.body.durationYoga,
+                start: req.body.start,
+                end: req.body.end,
+                comment: req.body.comment,
+                img: req.body.img
+            });
+            yoga.save()
+                .then((data: any) => res.status(201).json({ message: 'session is added with success!', Data: data }))
+                .catch((err: any) => res.status(400).json({ err }));
+        });
+
         app.listen(this.port, () => {
             console.log("réponse recue !");
         });

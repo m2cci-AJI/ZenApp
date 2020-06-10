@@ -162,6 +162,21 @@ var Application = /** @class */ (function () {
                 .then(function (data) { return res.status(200).json({ message: 'sessions are getted with succes', Data: data }); })
                 .catch(function (err) { return res.status(400).json({ err: err }); });
         });
+        app.post('/api/session', auth, function (req, res, next) {
+            var yoga = new session_model_1.Yoga({
+                idYogi: req.body.idYogi,
+                typeYoga: req.body.typeYoga,
+                sousTypeYoga: req.body.sousTypeYoga,
+                durationYoga: req.body.durationYoga,
+                start: req.body.start,
+                end: req.body.end,
+                comment: req.body.comment,
+                img: req.body.img
+            });
+            yoga.save()
+                .then(function (data) { return res.status(201).json({ message: 'session is added with success!', Data: data }); })
+                .catch(function (err) { return res.status(400).json({ err: err }); });
+        });
         app.listen(this.port, function () {
             console.log("réponse recue !");
         });
