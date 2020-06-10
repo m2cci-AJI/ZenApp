@@ -139,6 +139,33 @@ var Application = /** @class */ (function () {
             })
                 .catch(function (error) { return res.status(500).json(error); });
         });
+        app.post('/api/new-password', function (req, res, next) {
+            token_model_1.passwordResetToken.findOne({ resettoken: req.body.resettoken })
+                .then(function (yogiToken) {
+                if (!yogiToken) {
+                    return res.status(409).json({ message: 'Token est expiré' });
+                }
+                yogi_model_1.Yogi.findOne({ _id: yogiToken._userId })
+                    .then(function (yogiEmail) {
+                    if (!yogiEmail) {
+                        return res.status(409).json({ message: 'Ce client n\'existe pas !' });
+                    }
+                    bcrypt.hash(req.body.newPassword, 10)
+                        .then(function (hash) {
+                        yogiEmail.password = hash;
+                        yogiEmail.save()
+                            .then(function () {
+                            yogiToken.remove();
+                            res.status(201).json({ message: 'Le mot de passe est modifié avec succès !', email: yogiEmail.email });
+                        })
+                            .catch(function () { return res.status(400).json({ message: 'Le mot de passe n\'est pas modifié !' }); });
+                    })
+                        .catch(function () { res.status(400).json({ message: 'Erreur d\'encodage du mot de passe !' }); });
+                })
+                    .catch(function (error) { return res.status(500).json(error); });
+            })
+                .catch(function (error) { return res.status(500).json(error); });
+        });
         app.post('/api/req-reset-password', function (req, res, next) {
             yogi_model_1.Yogi.findOne({ email: req.body.email })
                 .then(function (yogi) {
