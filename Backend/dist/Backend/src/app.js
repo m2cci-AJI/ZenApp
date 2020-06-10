@@ -24,6 +24,8 @@ var jsonwebtoken = require("jsonwebtoken");
 var token_model_1 = require("./models/token.model");
 var nodemailer_1 = __importDefault(require("nodemailer"));
 var crypto_1 = __importDefault(require("crypto"));
+var auth = require('./middleware');
+var session_model_1 = require("./models/session.model");
 var Application = /** @class */ (function () {
     function Application(port) {
         this.port = port;
@@ -154,6 +156,11 @@ var Application = /** @class */ (function () {
             yogi_model_1.Yogi.find({ _id: req.params.id })
                 .then(function (yogi) { res.status(200).json({ message: 'user is getted with sucees !', Data: yogi }); })
                 .catch(function (err) { res.status(400).json({ err: err }); });
+        });
+        app.get('/api/session/:id', auth, function (req, res, next) {
+            session_model_1.Yoga.find({ idYogi: req.params.id })
+                .then(function (data) { return res.status(200).json({ message: 'sessions are getted with succes', Data: data }); })
+                .catch(function (err) { return res.status(400).json({ err: err }); });
         });
         app.listen(this.port, function () {
             console.log("réponse recue !");

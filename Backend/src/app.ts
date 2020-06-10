@@ -9,6 +9,8 @@ import jsonwebtoken = require('jsonwebtoken');
 import { passwordResetToken } from './models/token.model';
 import nodemailer from 'nodemailer';
 import crypto from "crypto";
+const auth = require('./middleware');
+import { Yoga } from './models/session.model';
 
 export class Application {
 
@@ -153,6 +155,12 @@ export class Application {
             Yogi.find({ _id: req.params.id })
                 .then((yogi) => { res.status(200).json({ message: 'user is getted with sucees !', Data: yogi }) })
                 .catch((err) => { res.status(400).json({ err }) });
+        });
+
+        app.get('/api/session/:id', auth, (req: Request, res: Response, next) => {
+            Yoga.find({ idYogi: req.params.id })
+                .then((data) => res.status(200).json({ message: 'sessions are getted with succes', Data: data }))
+                .catch((err) => res.status(400).json({ err }));
         });
 
         app.listen(this.port, () => {
