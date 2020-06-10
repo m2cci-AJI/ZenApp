@@ -10,3 +10,7 @@
 #dropdown1, #dropdown2{
   z-index: 10000;
 }
+
+#logout {
+  cursor: pointer;
+}
