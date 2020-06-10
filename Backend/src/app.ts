@@ -39,6 +39,37 @@ export class Application {
             console.error('connection error:', err)
         });
 
+        app.post('/api/confirm-reset-password', (req: Request, res: Response, next) => {
+            if (!req.body.email) {
+                return res.status(500).json({ message: 'L\'email est manqué ! Veillez écrire votre adresse email.' });
+            }
+            Yogi.findOne({ email: req.body.email })
+                .then((yogi) => {
+                    if (!yogi) {
+                        return res.status(409).json({ message: 'Cet Email n\'existe pas !' });
+                    }
+                    let transporter = nodemailer.createTransport({
+                        service: 'gmail',
+                        auth: {
+                            user: 'jemaienit@gmail.com',
+                            pass: 'AHm08718127'
+                        }
+                    });
+                    let mailOptions = {
+                        to: yogi.email,
+                        from: 'jemaienit@gmail.com',
+                        subject: 'Votre mot de passe a été modifié',
+                        html: '<h1>Votre mot de passe a été modifié.<h1><h4>Bonjour ' + yogi.name + ',</h4><p>Cet email a pour but de vous confirmer la modification récente de votre mot de passe.</p><p>Conservez votre mot de passe de manière sécurisée. Ne le communiquez pas et ne répondez jamais à un email sollicitant vos codes d\'accès. </p><p>Votre adresse email et vos informations de contact ne sont pas partagées avec des tiers sans votre permission, sauf si cela est légalement requis ou lorsque cela est nécessaire pour le fonctionnement du site.</p><p>Cordialement.</p>'
+                    };
+                    transporter.sendMail(mailOptions, (err, info) => {
+                        console.log(err || info);
+                    });
+                    res.status(201).json({ message: 'L\'email est envoyé avec succès !' });
+                })
+                .catch((error: any) => res.status(500).json(error));
+        });
+
+
         app.post('/api/signup', (req: Request, res: Response, next) => {
             bcrypt.hash(req.body.password, 10)
                 .then((hash:any) => {

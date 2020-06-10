@@ -50,6 +50,35 @@ var Application = /** @class */ (function () {
         db.on('error', function (err) {
             console.error('connection error:', err);
         });
+        app.post('/api/confirm-reset-password', function (req, res, next) {
+            if (!req.body.email) {
+                return res.status(500).json({ message: 'L\'email est manqué ! Veillez écrire votre adresse email.' });
+            }
+            yogi_model_1.Yogi.findOne({ email: req.body.email })
+                .then(function (yogi) {
+                if (!yogi) {
+                    return res.status(409).json({ message: 'Cet Email n\'existe pas !' });
+                }
+                var transporter = nodemailer_1.default.createTransport({
+                    service: 'gmail',
+                    auth: {
+                        user: 'jemaienit@gmail.com',
+                        pass: 'AHm08718127'
+                    }
+                });
+                var mailOptions = {
+                    to: yogi.email,
+                    from: 'jemaienit@gmail.com',
+                    subject: 'Votre mot de passe a été modifié',
+                    html: '<h1>Votre mot de passe a été modifié.<h1><h4>Bonjour ' + yogi.name + ',</h4><p>Cet email a pour but de vous confirmer la modification récente de votre mot de passe.</p><p>Conservez votre mot de passe de manière sécurisée. Ne le communiquez pas et ne répondez jamais à un email sollicitant vos codes d\'accès. </p><p>Votre adresse email et vos informations de contact ne sont pas partagées avec des tiers sans votre permission, sauf si cela est légalement requis ou lorsque cela est nécessaire pour le fonctionnement du site.</p><p>Cordialement.</p>'
+                };
+                transporter.sendMail(mailOptions, function (err, info) {
+                    console.log(err || info);
+                });
+                res.status(201).json({ message: 'L\'email est envoyé avec succès !' });
+            })
+                .catch(function (error) { return res.status(500).json(error); });
+        });
         app.post('/api/signup', function (req, res, next) {
             bcrypt.hash(req.body.password, 10)
                 .then(function (hash) {
