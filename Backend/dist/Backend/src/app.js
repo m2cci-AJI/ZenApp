@@ -145,6 +145,11 @@ var Application = /** @class */ (function () {
                 .then(function (data) { return res.status(200).json({ message: 'user is updated with success!', Data: data }); })
                 .catch(function (err) { return res.status(400).json(err); });
         });
+        app.get('/api/signup', function (req, res, next) {
+            yogi_model_1.Yogi.find()
+                .then(function (yogis) { res.status(200).json({ message: 'users are getted with sucees !', Data: yogis }); })
+                .catch(function (err) { res.status(400).json({ err: err }); });
+        });
         app.listen(this.port, function () {
             console.log("réponse recue !");
         });
