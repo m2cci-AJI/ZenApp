@@ -149,6 +149,12 @@ export class Application {
                 .catch((err) => { res.status(400).json({ err }) });
         });
 
+        app.get('/api/signup/:id', (req: Request, res: Response, next) => {
+            Yogi.find({ _id: req.params.id })
+                .then((yogi) => { res.status(200).json({ message: 'user is getted with sucees !', Data: yogi }) })
+                .catch((err) => { res.status(400).json({ err }) });
+        });
+
         app.listen(this.port, () => {
             console.log("réponse recue !");
         });
