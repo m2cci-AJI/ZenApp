@@ -5,6 +5,7 @@ import bodyparser = require("body-parser");
 import cors from 'cors';
 import { Yogi } from './models/yogi.model';
 var bcrypt = require('bcryptjs');
+import jsonwebtoken = require('jsonwebtoken');
 
 export class Application {
 
@@ -49,6 +50,33 @@ export class Application {
                         })
                         .catch((err: any) => { res.status(500).json({ message: 'Cette erreur vient du serveur ! Veuillez re-connecter ultérieurement.', error: err }) });
                 });
+        });
+
+        app.post('/api/login', (req: Request, res: Response, next) => {
+            Yogi.findOne({ email: req.body.email })
+                .then((yogi) => {
+                    if (!yogi) {
+                        return res.status(401).json({ message: 'Cet email n\'existe pas ! Veuillez vérifier votre adresse email.' });
+                    } else {
+                        bcrypt.compare(req.body.password, yogi.password)
+                            .then((valid: any) => {
+                                if (!valid) {
+                                    return res.status(401).json({ message: 'Ce mot de passe ne correspond pas à cet email ! Veuillez vérifier votre mot de passe.' });
+                                } else {
+                                    return res.status(200).json({
+                                        id: yogi._id,
+                                        token: jsonwebtoken.sign(
+                                            { id: yogi._id },
+                                            SECRET_KEY,
+                                            { expiresIn: '24h' }
+                                        )
+                                    });
+                                }
+                            })
+                            .catch((err: any) => res.status(500).json({ message: 'Cette erreur vient du serveur ! Veuillez re-connecter ultérieurement !' }));
+                    }
+                })
+                .catch(() => { });
         });
 
         app.listen(this.port, () => {

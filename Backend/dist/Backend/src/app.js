@@ -9,6 +9,7 @@ var bodyparser = require("body-parser");
 var cors_1 = __importDefault(require("cors"));
 var yogi_model_1 = require("./models/yogi.model");
 var bcrypt = require('bcryptjs');
+var jsonwebtoken = require("jsonwebtoken");
 var Application = /** @class */ (function () {
     function Application(port) {
         this.port = port;
@@ -49,6 +50,30 @@ var Application = /** @class */ (function () {
                 })
                     .catch(function (err) { res.status(500).json({ message: 'Cette erreur vient du serveur ! Veuillez re-connecter ultérieurement.', error: err }); });
             });
+        });
+        app.post('/api/login', function (req, res, next) {
+            yogi_model_1.Yogi.findOne({ email: req.body.email })
+                .then(function (yogi) {
+                if (!yogi) {
+                    return res.status(401).json({ message: 'Cet email n\'existe pas ! Veuillez vérifier votre adresse email.' });
+                }
+                else {
+                    bcrypt.compare(req.body.password, yogi.password)
+                        .then(function (valid) {
+                        if (!valid) {
+                            return res.status(401).json({ message: 'Ce mot de passe ne correspond pas à cet email ! Veuillez vérifier votre mot de passe.' });
+                        }
+                        else {
+                            return res.status(200).json({
+                                id: yogi._id,
+                                token: jsonwebtoken.sign({ id: yogi._id }, SECRET_KEY, { expiresIn: '24h' })
+                            });
+                        }
+                    })
+                        .catch(function (err) { return res.status(500).json({ message: 'Cette erreur vient du serveur ! Veuillez re-connecter ultérieurement !' }); });
+                }
+            })
+                .catch(function () { });
         });
         app.listen(this.port, function () {
             console.log("réponse recue !");

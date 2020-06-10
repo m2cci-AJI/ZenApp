@@ -61,7 +61,6 @@ export class TimelineComponent implements OnInit, AfterViewInit {
   }
 
   createItems(): any {
-    if (localStorage.getItem('token') !== null) { /* to be deleted */
       const idyogi = new JwtHelperService().decodeToken(localStorage.getItem('token')).id;
       this.calendrierService.getItems(idyogi).subscribe((data) => {
         const sessionsYoga = ((data.body) as any).Data;
@@ -88,7 +87,6 @@ export class TimelineComponent implements OnInit, AfterViewInit {
       (err) => {
           console.log('the error is: ', err);
       });
-    }
   }
 
   centrer() {
