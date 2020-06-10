@@ -68,8 +68,7 @@ export class StatisticsComponent implements OnInit {
   constructor(private calendrierService: CalendrierService,
               private matDialog: MatDialog,
               private statisticsService: StatisticsService,
-    private yogiService: YogiService) {
-    if (localStorage.getItem('token') !== null) {
+              private yogiService: YogiService) {
       this.idUser = new JwtHelperService().decodeToken(localStorage.getItem('token')).id;
       this.calendrierService.getItems(this.idUser).subscribe((data) => {
       const input: Yoga[] = ((data.body) as any).Data;
@@ -89,7 +88,6 @@ export class StatisticsComponent implements OnInit {
       (err) => {
         console.log('the error is: ', err);
       });
-    }
   }
 
   ngOnInit() {

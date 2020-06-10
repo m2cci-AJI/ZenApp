@@ -4,8 +4,8 @@
   "description": "",
   "main": "dist/server.js",
   "scripts": {
-    "dev": "concurrently -n \"TS, Node\" \"npx tsc --watch\" \"nodemon dist/server.js\"",
-    "clean": "rm -rf node_modules"
+    "clean": "rm -rf node_modules",
+    "dev": "concurrently -n \"TS, Node\" \"npx tsc --watch\" \"nodemon dist/Backend/src/server.js\""
   },
   "author": "",
   "license": "ISC",
@@ -19,6 +19,7 @@
     "@types/multer": "^1.3.10",
     "@types/node": "^12.12.21",
     "@types/nodemailer": "^6.4.0",
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "concurrently": "^5.0.2",
     "cors": "^2.8.5",
