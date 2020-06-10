@@ -72,6 +72,22 @@ Cette commande exécute le script `dev` définit dans le fichier package.json, c
 ```
 ---
 
+# Nettoyage du projet de l'application
+
+Vous êtes invité à exécuter tout simplement la commande suivante:
+```bash
+npm run clean
+
+```
+Cette commande exécute le script `clean` qui est définit dans les fichiers package.json des parties Backend et Frontend, comme suit:
+
+```
+  "scripts": {
+    "clean": "rm -rf node_modules"
+  }
+```
+---
+
 Finalement, je vous souhaite une expérience de méditation agréable, réjouissez-vous !
 <p align="center">
   <img src = "Frontend/src/assets/img/meditation_pensees.jpg" width = 500>
