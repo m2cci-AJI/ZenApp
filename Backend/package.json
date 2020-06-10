@@ -4,7 +4,8 @@
   "description": "",
   "main": "dist/server.js",
   "scripts": {
-    "dev": "concurrently -n \"TS, Node\" \"npx tsc --watch\" \"nodemon dist/server.js\""
+    "dev": "concurrently -n \"TS, Node\" \"npx tsc --watch\" \"nodemon dist/server.js\"",
+    "clean": "rm -rf node_modules"
   },
   "author": "",
   "license": "ISC",
