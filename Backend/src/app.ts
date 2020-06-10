@@ -179,6 +179,12 @@ export class Application {
                 .catch((err: any) => res.status(400).json({ err }));
         });
 
+        app.put('/api/session/:id', auth, (req: Request, res: Response, next) => {
+            Yoga.update({ _id: req.params.id }, { ...req.body, _id: req.params.id })
+                .then((data) => res.status(200).json({ message: 'session is updated with success!', Data: data }))
+                .catch((err) => res.status(400).json(err));
+        });
+
         app.listen(this.port, () => {
             console.log("réponse recue !");
         });

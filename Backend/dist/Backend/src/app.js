@@ -177,6 +177,11 @@ var Application = /** @class */ (function () {
                 .then(function (data) { return res.status(201).json({ message: 'session is added with success!', Data: data }); })
                 .catch(function (err) { return res.status(400).json({ err: err }); });
         });
+        app.put('/api/session/:id', auth, function (req, res, next) {
+            session_model_1.Yoga.update({ _id: req.params.id }, __assign(__assign({}, req.body), { _id: req.params.id }))
+                .then(function (data) { return res.status(200).json({ message: 'session is updated with success!', Data: data }); })
+                .catch(function (err) { return res.status(400).json(err); });
+        });
         app.listen(this.port, function () {
             console.log("réponse recue !");
         });
