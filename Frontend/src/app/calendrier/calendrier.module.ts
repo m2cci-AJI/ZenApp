@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { VisTimelineDirective } from './timeline/vis-timeline.directive';
+import { VisTimelineService } from './timeline/vis-timeline.service';
 
 @NgModule({
   declarations: [TimelineComponent, WindowCommentComponent, WindowTimeComponent, VisTimelineDirective],
@@ -17,6 +18,7 @@ import { VisTimelineDirective } from './timeline/vis-timeline.directive';
     FormsModule,
     NgbModule
   ],
-  entryComponents: [WindowTimeComponent, WindowCommentComponent]
+  entryComponents: [WindowTimeComponent, WindowCommentComponent],
+  providers: [VisTimelineService]
 })
 export class CalendrierModule { }
