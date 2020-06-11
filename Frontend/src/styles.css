@@ -3,6 +3,10 @@
     background-color: greenyellow;
     color: white;
   }
+
+  .vis-label .vis-inner {
+    min-height: 500px;
+  }
   
   button:disabled {
     cursor: not-allowed;
