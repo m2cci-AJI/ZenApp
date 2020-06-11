@@ -35,6 +35,12 @@ La base de données utilisée pour cette application est gérée par l'interméd
 #### Angular 8: 
 l'outil [Angular](https://angular.io/) CLI permettant de gérer une application Agular a été installé. Cet outil offre plusieurs commandes facilitant la création du projet Angular, ainsi que la génération des composants, des modules, des services, ...
 
+#### Bibliothèques: 
+Les bibliothèques utilisées dans l'application coté client sont les suivantes:
+* [vis.js](https://www.chartjs.org/): cette librairie a été exploitée pour créer un calendrier qui représente toutes les séances de méditation ou de pranayama pratiquées par le client.
+* [chart.js](https://visjs.org/): cette librairie a été utilisée pour cérer des courbes représentant l'assiduité de client.
+* [anime.js](https://animejs.com/): cette librairie a été employée afin de créer des animations visuellement agréable pour permettre au client de vivre une expérience méditative confortable.
+* [syncfusion](https://www.syncfusion.com/): cette librairie nous a permis de développer un tableau de bord de visualisation des données afin de permettre au client de suivre son évolution dans la pratiques méditatives.
 ---
 
 # Lancement de l'application sur le navigateur
@@ -49,14 +55,14 @@ ou en utilisant SSH:
 git@github.com:m2cci-AJI/ZenApp.git
 
 ```
-Par la suite, passons à lancer notre application ZenRelax sur votre navigateur. En fait, cette application comporte principalement deux dossiers indépendants: Frontend et Backend, avec leurs propres fichiers de configuration package.json. Tout d'abord, il faut exécuter la commande suivante dans les deux terminaux associés à deux dossiers:
+Par la suite, passons à lancer notre application ZenRelax sur votre navigateur. En fait, cette application comporte principalement deux sous-dossiers indépendants: Frontend et Backend, avec leurs propres fichiers de configuration package.json. Tout d'abord, il faut exécuter la commande suivante dans deux terminaux différents pointés sur les dossiers Frontend et Backend:
 ```bash
 npm install
 
 ```
-Cette commande permet d'installer les dépendances de deux dossiers définits dans leurs fichiers package.json, en créant les fichiers node_modules correspondants.
+Cette commande permet d'installer toutes les dépendances définits dans leurs fichiers de configuration package.json, en créant les dossiers node_modules correspondants.
 
-Afin de lancer l'application angular localement sur votre serveur sur le port (par défaut) 4200, vous devez vous localiser sur le dossier Frontend et lancez la commande suivante sur le terminal:
+Afin de lancer l'application angular localement sur votre serveur sur le port 4200, vous devez vous localiser sur le dossier Frontend et lancez la commande suivante sur le terminal:
 ```bash
 npm run start
 ```
