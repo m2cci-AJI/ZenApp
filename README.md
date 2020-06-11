@@ -38,7 +38,7 @@ l'outil [Angular](https://angular.io/) CLI permettant de gérer une application 
 #### Bibliothèques: 
 Les bibliothèques utilisées dans l'application coté client sont les suivantes:
 * [vis.js](https://www.chartjs.org/): cette librairie a été exploitée pour créer un calendrier qui représente toutes les séances de méditation ou de pranayama pratiquées par le client.
-* [chart.js](https://visjs.org/): cette librairie a été utilisée pour cérer des courbes représentant l'assiduité de client.
+* [chart.js](https://visjs.org/): cette librairie a été utilisée pour créer des courbes représentant l'assiduité de client.
 * [anime.js](https://animejs.com/): cette librairie a été employée afin de créer des animations visuellement agréable pour permettre au client de vivre une expérience méditative confortable.
 * [syncfusion](https://www.syncfusion.com/): cette librairie nous a permis de développer un tableau de bord de visualisation des données afin de permettre au client de suivre son évolution dans la pratiques méditatives.
 ---
@@ -100,6 +100,15 @@ Cette commande exécute le script `clean` qui est définit dans les fichiers pac
     "clean": "rm -rf node_modules"
   }
 ```
+---
+
+# Exécution des tests unitaires
+la commande suivante est utilisés pour exécuter des tests unitaires afin de valider notre travail de développement:
+
+```
+npm test
+```
+
 ---
 
 Finalement, je vous souhaite une expérience de méditation agréable, réjouissez-vous !
