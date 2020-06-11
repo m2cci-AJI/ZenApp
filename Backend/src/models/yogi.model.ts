@@ -14,3 +14,4 @@ let yogiSchema: Schema = new Schema({
 yogiSchema.plugin(uniqueValidator);
 
 export const Yogi: Model<any> = model<any>("Yogi", yogiSchema);
+ // modèle utilisé pour enregister, modifer ou supprimer un document associé à un client utilisant l'application.

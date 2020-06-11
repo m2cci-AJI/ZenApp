@@ -12,3 +12,4 @@ var yogiSchema = new mongoose_1.Schema({
 });
 yogiSchema.plugin(uniqueValidator);
 exports.Yogi = mongoose_1.model("Yogi", yogiSchema);
+// modèle utilisé pour enregister, modifer ou supprimer un document associé à un client utilisant l'application.

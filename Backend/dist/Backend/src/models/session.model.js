@@ -15,3 +15,4 @@ var SessionSchema = new mongoose_1.Schema({
     img: { type: String, required: true }
 });
 exports.Yoga = mongoose_1.model("Yoga", SessionSchema);
+// modèle utilisé pour enregister, modifer ou supprimer un document associé à une séance de relaxation (méditation ou pranayama).

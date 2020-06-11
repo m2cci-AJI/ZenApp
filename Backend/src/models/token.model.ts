@@ -7,3 +7,4 @@ let resettokenSchema: Schema = new Schema({
 });
 
 export const passwordResetToken: Model<any> = model<any>('passwordResetToken', resettokenSchema);
+ // modèle utilisé pour enregister, modifer ou supprimer un document associé à un token d'authenfication.

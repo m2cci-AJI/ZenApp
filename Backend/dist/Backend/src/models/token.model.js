@@ -7,3 +7,4 @@ var resettokenSchema = new mongoose_1.Schema({
     createdAt: { type: Date, required: true, default: Date.now, expires: 43200 }
 });
 exports.passwordResetToken = mongoose_1.model('passwordResetToken', resettokenSchema);
+// modèle utilisé pour enregister, modifer ou supprimer un document associé à un token d'authenfication.

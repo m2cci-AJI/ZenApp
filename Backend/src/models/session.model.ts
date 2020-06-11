@@ -15,3 +15,4 @@ let SessionSchema: Schema = new Schema({
 });
 
 export const Yoga: Model<any> = model<any>("Yoga", SessionSchema);
+ // modèle utilisé pour enregister, modifer ou supprimer un document associé à une séance de relaxation (méditation ou pranayama).
