@@ -66,7 +66,7 @@ export class PracticeComponent implements OnInit, AfterViewInit, OnDestroy {
         loop: true
       });
     } else if (this.respiration === Respiration['0']) {
-      const path = anime.path('polygon');
+      const path = anime.path('#polygon-coh');
       this.something = anime({
         targets: '.ball-coh',
         translateX: path('x'),
