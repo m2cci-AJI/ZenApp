@@ -7,8 +7,8 @@
         <div class="card-body">
           <div class="control-group d-flex flex-row align-items-start">
             <label class="control-label col-md-6 text-md-right">Nom et prénom</label>
-            <div class="d-flex flex-column">
-              <input type="text" placeholder="Entrer votre nom et prénom" formControlName="name">
+            <div class="d-flex flex-column col-md-6">
+              <input type="text" class="form-control form-control-sm" placeholder="Entrer votre nom et prénom" formControlName="name">
               <mat-error class="align-self-start"
                 *ngIf="contactForm.controls.name?.invalid && (contactForm.controls.name.dirty || contactForm.controls.name.touched)">
                 <div *ngIf="contactForm.controls.name?.errors.required">
@@ -20,8 +20,8 @@
           <br>
           <div class="control-group d-flex flex-row align-items-start">
             <label class="control-label col-md-6 text-md-right">Login</label>
-            <div class="d-flex flex-column">
-              <input type="text" placeholder="Choisir un login" formControlName="login">
+            <div class="d-flex flex-column col-md-6">
+              <input type="text" class="form-control form-control-sm" placeholder="Choisir un login" formControlName="login">
               <mat-error class="align-self-start"
                 *ngIf="contactForm.controls.login?.invalid && (contactForm.controls.login.dirty || contactForm.controls.login.touched)">
                 <div *ngIf="contactForm.controls.login?.errors.required">
@@ -33,8 +33,8 @@
           <br>
           <div class="control-group d-flex flex-row align-items-start">
             <label class="control-label col-md-6 text-md-right">Date de naissance</label>
-            <div class="d-flex flex-column">
-              <input type="text" placeholder="Entrer votre date de naissance" formControlName="birthday">
+            <div class="d-flex flex-column col-md-6">
+              <input type="text" class="form-control form-control-sm" placeholder="Entrer votre date de naissance" formControlName="birthday">
               <mat-error class="align-self-start"
                 *ngIf="contactForm.controls.birthday?.invalid && (contactForm.controls.birthday.dirty || contactForm.controls.birthday.touched)">
                 <div *ngIf="contactForm.controls.birthday?.errors.required">
@@ -46,8 +46,8 @@
           <br>
           <div class="control-group d-flex flex-row align-items-start">
             <label class="control-label col-md-6 text-md-right">Email</label>
-            <div class="d-flex flex-column">
-              <input type="text" placeholder="Entrer votre adresse email" formControlName="email">
+            <div class="d-flex flex-column col-md-6">
+              <input type="text" class="form-control form-control-sm" placeholder="Entrer votre adresse email" formControlName="email">
               <mat-error class="align-self-start"
                 *ngIf="contactForm.controls.email?.invalid && (contactForm.controls.email.dirty || contactForm.controls.email.touched)">
                 <div *ngIf="contactForm.controls.email?.errors.required">
@@ -62,8 +62,8 @@
           <br>
           <div class="control-group d-flex flex-row align-items-start">
             <label class="control-label col-md-6 text-md-right">Mot de passe</label>
-            <div class="d-flex flex-column">
-              <input type="password" placeholder="Entrer votre mot de passe" formControlName="MPasse">
+            <div class="d-flex flex-column col-md-6">
+              <input type="password" class="form-control form-control-sm" placeholder="Entrer votre mot de passe" formControlName="MPasse">
               <mat-error class="align-self-start"
                 *ngIf="contactForm.controls.MPasse?.invalid && (contactForm.controls.MPasse.dirty || contactForm.controls.MPasse.touched)">
                 <div *ngIf="contactForm.controls.MPasse?.errors.required">
@@ -78,8 +78,8 @@
           <br>
           <div class="control-group d-flex flex-row align-items-start">
             <label class="control-label col-md-6 text-md-right">Mot de passe de confirmation</label>
-            <div class="d-flex flex-column">
-              <input kendoTextBox type="password" placeholder="Confirmer votre mot de passe" formControlName="CMPasse">
+            <div class="d-flex flex-column col-md-6">
+              <input kendoTextBox type="password" class="form-control form-control-sm" placeholder="Confirmer votre mot de passe" formControlName="CMPasse">
               <mat-error class="align-self-start"
                 *ngIf="contactForm.controls.CMPasse?.invalid && (contactForm.controls.CMPasse.dirty || contactForm.controls.CMPasse.touched)">
                 <div *ngIf="contactForm.controls.CMPasse?.errors.required">

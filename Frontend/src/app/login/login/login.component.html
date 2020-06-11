@@ -7,8 +7,8 @@
         <div class="card-body">
           <div class="control-group d-flex flex-row align-items-start">
             <label class="control-label col-md-6 text-md-right">Login</label>
-            <div class="d-flex flex-column">
-              <input type="text" placeholder="Choisir un login" formControlName="login">
+            <div class="d-flex flex-column col-md-6">
+              <input _ngcontent-c0="" class="form-control form-control-sm" type="text" placeholder="Choisir un login" formControlName="login">
               <mat-error class="align-self-start"
                 *ngIf="contactForm.controls.login?.invalid && (contactForm.controls.login.dirty || contactForm.controls.login.touched)">
                 <div *ngIf="contactForm.controls.login.errors.required">
@@ -20,8 +20,8 @@
           <br>
           <div class="control-group d-flex flex-row align-items-start">
             <label class="control-label col-md-6 text-md-right">Email</label>
-            <div class="d-flex flex-column">
-              <input type="text" placeholder="Entrer votre adresse email" formControlName="email" email>
+            <div class="d-flex flex-column col-md-6">
+              <input type="text" class="form-control form-control-sm" placeholder="Entrer votre adresse email" formControlName="email" email>
               <mat-error class="align-self-start"
                 *ngIf="contactForm.controls.email?.invalid && (contactForm.controls.email.dirty || contactForm.controls.email.touched)">
                 <div *ngIf="contactForm.controls.email?.errors.required">
@@ -36,8 +36,8 @@
           <br>
           <div class="control-group d-flex flex-row align-items-start">
             <label class="control-label col-md-6 text-md-right">Mot de passe</label>
-            <div class="d-flex flex-column">
-              <input type="password" placeholder="Entrer votre mot de passe" formControlName="MPasse">
+            <div class="d-flex flex-column col-md-6">
+              <input type="password" class="form-control form-control-sm" placeholder="Entrer votre mot de passe" formControlName="MPasse">
               <mat-error class="align-self-start"
                 *ngIf="contactForm.controls.MPasse?.invalid && (contactForm.controls.MPasse.dirty || contactForm.controls.MPasse.touched)">
                 <div *ngIf="contactForm.controls.MPasse?.errors.required">
