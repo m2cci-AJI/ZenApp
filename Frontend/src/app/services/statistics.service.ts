@@ -38,6 +38,7 @@ export class StatisticsService {
     return dates;
   }
 
+  
   createDataFreqY(data: any[], TableSessions: Yoga[]) {
     const frequencies = [];
     for (let i = 0; i < data.length; i++) {
@@ -53,6 +54,7 @@ export class StatisticsService {
     return frequencies;
   }
 
+  // create data to plot the graph of days-x
   linedataDay(tableX: any[], tableY: any[]) {
     const lineData = [];
     let data: any;
@@ -63,6 +65,7 @@ export class StatisticsService {
     return lineData;
   }
 
+  // create data to plot the graph of dates-x
   linedataWM(tableX: any[], tableY: any[]) {
     const lineData = [];
     let data: any;
@@ -73,12 +76,14 @@ export class StatisticsService {
     return lineData;
   }
 
+  // get new format of date couple
   getFormatDate(couple: any) {
     const date1 = this.formatDate(couple.date1);
     const date2 = this.formatDate(couple.date2);
     return date1 + ' / ' + date2;
   }
 
+  // create table having last seven dates as elements
   getTableOnedates(n: number) {
     const dates = [];
     let date = new Date();
@@ -89,6 +94,8 @@ export class StatisticsService {
     return dates;
   }
 
+
+  // create table of total meditation duration/period
   createDataDurY(data: any[], TableSessions: Yoga[]) {
     const durations = [];
     for (let i = 0; i < data.length; i++) {
