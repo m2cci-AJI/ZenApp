@@ -79,7 +79,7 @@ describe('StatisticsService', () => {
       {date1: new Date(2020, 10, 1), date2: new Date(2020, 11, 1)}
     ];
     const sessions: Yoga[] = [
-      new Yoga('112', sessionYoga['0'], 'Carré', 15, new Date(2020, 9, 3), new Date(), new Comment('aggga', 'agga', 'agghhs'), 'hhrttr')
+      new Yoga('112', sessionYoga['0'], 'Carré', 15, new Date(2020, 9, 3), new Date(2020, 9, 4), new Comment('aggga', 'agga', 'agghhs'), 'hhrttr')
     ];
     const result = service.createDataDurY(data, sessions);
     expect(result).toEqual([15, 0]);

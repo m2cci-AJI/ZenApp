@@ -1,14 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Yoga } from '../models/yoga.model';
-import { ItemCalendrier } from '../models/item.model';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CalendrierService {
-  items: ItemCalendrier[];
-  sessionsYoga: Yoga[];
   connectionYoga: string = 'http://localhost:4000/api/session';
   constructor(private http: HttpClient) {
   }
@@ -24,7 +21,6 @@ export class CalendrierService {
   updateItem(yoga: Yoga, id: any) {
     return this.http.put(this.connectionYoga + '/' + id, yoga, {observe: 'response'});
   }
-
 
   getStart(end: Date, duration: number) {
     return new Date(end.getTime() - duration * 60000);

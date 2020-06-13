@@ -15,6 +15,6 @@ getTestBed().initTestEnvironment(
   platformBrowserDynamicTesting()
 );
 // Then we find all the tests.
-const context = require.context('src/app/services/', true, /statistics\.service\.spec\.ts$/);
+const context = require.context('src/app/services/', true, /calendrier\.service\.spec\.ts$/);
 // And load the modules.
 context.keys().map(context);
