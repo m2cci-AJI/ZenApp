@@ -17,3 +17,5 @@
 [0613/182108.254:ERROR:process_reader_win.cc(151)] SuspendThread: Accès refusé. (0x5)
 [0613/182108.254:ERROR:process_reader_win.cc(151)] SuspendThread: Accès refusé. (0x5)
 [0613/204720.567:ERROR:process_reader_win.cc(151)] SuspendThread: Accès refusé. (0x5)
+[0614/220129.163:ERROR:http_transport_win.cc(276)] WinHttpSendRequest: L’opération a réussi. (0x0)
+[0614/220129.360:ERROR:process_reader_win.cc(151)] SuspendThread: Accès refusé. (0x5)
