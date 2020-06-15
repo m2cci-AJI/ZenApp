@@ -9,7 +9,6 @@ import { MatFormFieldModule } from '@angular/material';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { AuthentificationService } from 'src/app/services/authentification.service';
-import { Observable } from 'rxjs';
 
 describe('LoginComponent', () => {
   let component: LoginComponent;
@@ -52,10 +51,12 @@ describe('LoginComponent', () => {
     emailEl.setValue('jemaienit@hotmail.fr');
     loginEl.setValue('jemZE');
     passwordEl.setValue('ararafsdhdbbd');
+    const res = component.validForm();
     expect(component.contactForm.valid).toBeTruthy();
     expect(component.contactForm.value.email).toEqual('jemaienit@hotmail.fr');
     expect(component.contactForm.value.login).toEqual('jemZE');
     expect(component.contactForm.value.MPasse).toEqual('ararafsdhdbbd');
+    expect(res).toBeFalsy();
   });
 
   it('should verify if the form controls are invalid if the condition are not satisfied', () => {
@@ -65,16 +66,24 @@ describe('LoginComponent', () => {
     emailEl.setValue('jemaienit');
     loginEl.setValue('');
     passwordEl.setValue('ara');
+    const res = component.validForm();
     expect(component.contactForm.invalid).toBeTruthy();
     expect(component.contactForm.controls["email"].valid).toBeFalsy();
     expect(component.contactForm.controls["login"].valid).toBeFalsy();
     expect(component.contactForm.controls["MPasse"].valid).toBeFalsy();
+    expect(res).toBeTruthy();
   });
 
   it('should call connection method of yogiService', () => {
-      spyOn(serviceYogi, 'connection').and.callThrough();
-      component.onSubmit();
-      expect(serviceYogi.connection).toHaveBeenCalledTimes(1);
+    spyOn(serviceYogi, 'connection').and.callThrough();
+    component.onSubmit();
+    expect(serviceYogi.connection).toHaveBeenCalledTimes(1);
+  });
+
+  it('should validate onGoBack', () => {
+    component.onGoBack();
+    expect(component.messageError).toEqual(null);
+    expect(component.submitted).toBeFalsy();
   });
 
 });

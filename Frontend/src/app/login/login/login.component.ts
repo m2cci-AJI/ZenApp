@@ -29,8 +29,6 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  get f() { return this.contactForm.controls; }
-
   onSubmit() {
     this.submitted = true;
     const Email = this.contactForm.value.email;

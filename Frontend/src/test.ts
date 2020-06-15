@@ -15,6 +15,6 @@ getTestBed().initTestEnvironment(
   platformBrowserDynamicTesting()
 );
 // Then we find all the tests.
-const context = require.context('src/app/login/', true, /\.spec\.ts$/);
+const context = require.context('src/app/sign-up', true, /\.spec\.ts$/);
 // And load the modules.
 context.keys().map(context);
