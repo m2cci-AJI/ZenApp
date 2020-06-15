@@ -1,6 +1,7 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, ViewChild } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Comment } from '../models/comment.model';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-comment',
@@ -12,6 +13,7 @@ export class CommentComponent implements OnInit {
   emotions: string;
   pensees: string;
   value: boolean = false;
+  @ViewChild(NgForm, { static: false }) ngForm: NgForm;
 
   constructor(private dialogRef: MatDialogRef<CommentComponent>,
               @Inject(MAT_DIALOG_DATA) public data: any) {
