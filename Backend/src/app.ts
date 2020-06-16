@@ -233,7 +233,7 @@ export class Application {
                 end: req.body.end,
                 comment: req.body.comment,
                 img: req.body.img
-            }); // création de l"objet yoga représentant une séance de relaxation soit méditation ou pranayama
+            }); // création de lobjet yoga représentant une séance de relaxation soit méditation ou pranayama
             yoga.save()
                 .then((data: any) => res.status(201).json({ message: 'session is added with success!', Data: data }))
                 .catch((err: any) => res.status(400).json({ err }));
