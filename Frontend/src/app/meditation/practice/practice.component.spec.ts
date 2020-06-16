@@ -10,8 +10,6 @@ import { CommentComponent } from 'src/app/comment/comment.component';
 import { BrowserDynamicTestingModule } from '@angular/platform-browser-dynamic/testing';
 import { FormsModule } from '@angular/forms';
 import { of } from 'rxjs';
-import { SessionMeditation } from 'src/app/models/meditation.model';
-import { Meditation } from 'src/app/meditation.enum';
 import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 
 describe('PracticeComponent', () => {
