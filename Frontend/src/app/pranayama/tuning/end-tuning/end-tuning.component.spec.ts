@@ -39,7 +39,6 @@ describe('EndTuningComponent', () => {
     router = TestBed.get(Router);
     location = TestBed.get(Location);
     router.initialNavigation();
-    fixture.detectChanges();
   }));
 
   it('should create', () => {

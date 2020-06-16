@@ -21,7 +21,6 @@ describe('WindowTimeComponent', () => {
     .compileComponents();
     fixture = TestBed.createComponent(WindowTimeComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
   }));
 
   it('should create', () => {
