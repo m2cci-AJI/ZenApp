@@ -2,7 +2,6 @@ import { async, ComponentFixture, TestBed, tick, fakeAsync } from '@angular/core
 import { DurationBreathingComponent } from './duration-breathing.component';
 import { Ng5SliderModule } from 'ng5-slider';
 import { RouterTestingModule } from '@angular/router/testing';
-import { PranayamaService } from '../../pranayama.service';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { MusiqueTuningComponent } from '../musique-tuning/musique-tuning.component';
@@ -14,6 +13,7 @@ import { EndTuningComponent } from '../end-tuning/end-tuning.component';
 import { StartTuningComponent } from '../start-tuning/start-tuning.component';
 import { TypeRespComponent } from '../type-resp/type-resp.component';
 import { UserManualComponent } from '../../user-manual/user-manual.component';
+import { PranayamaService } from 'src/app/services/pranayama.service';
 
 describe('DurationBreathingComponent', () => {
   let component: DurationBreathingComponent;

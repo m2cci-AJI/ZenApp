@@ -2,7 +2,7 @@ import { Component, OnInit, AfterViewInit, OnDestroy } from '@angular/core';
 import anime from 'animejs/lib/anime.es';
 import { Respiration } from '../respiration.enum';
 import { Musique } from '../musique.enum';
-import { PranayamaService } from '../pranayama.service';
+import { PranayamaService } from '../../services/pranayama.service';
 import { Observable } from 'rxjs';
 import { sessionYoga } from 'src/app/yoga.enum';
 import { Yoga } from 'src/app/models/yoga.model';
