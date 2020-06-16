@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { PranayamaService } from '../../../services/pranayama.service';
 
 @Component({
   selector: 'app-end-tuning',
@@ -9,13 +8,12 @@ import { PranayamaService } from '../../../services/pranayama.service';
 })
 export class EndTuningComponent implements OnInit {
 
-  constructor(private router: Router, private pranayamaService: PranayamaService) { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
   validate() {
-    console.log(this.pranayamaService.sessionPranyama);
     this.router.navigateByUrl('/pranayama/practice');
   }
 

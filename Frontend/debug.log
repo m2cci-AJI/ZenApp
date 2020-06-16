@@ -28,3 +28,7 @@
 [0616/112315.383:ERROR:process_reader_win.cc(151)] SuspendThread: Accès refusé. (0x5)
 [0616/112315.383:ERROR:process_reader_win.cc(151)] SuspendThread: Accès refusé. (0x5)
 [0616/112315.418:ERROR:crash_report_database_win.cc(487)] failed to truncate: L’opération demandée n’a pu s’accomplir sur un fichier ayant une section mappée utilisateur ouverte. (0x4C8)
+[0616/113724.092:ERROR:process_reader_win.cc(151)] SuspendThread: Accès refusé. (0x5)
+[0616/113724.153:ERROR:process_reader_win.cc(151)] SuspendThread: Accès refusé. (0x5)
+[0616/113724.153:ERROR:process_reader_win.cc(151)] SuspendThread: Accès refusé. (0x5)
+[0616/113724.153:ERROR:process_reader_win.cc(151)] SuspendThread: Accès refusé. (0x5)
