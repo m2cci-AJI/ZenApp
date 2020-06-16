@@ -69,8 +69,8 @@ export class StatisticsComponent implements OnInit {
               private matDialog: MatDialog,
               private statisticsService: StatisticsService,
               private yogiService: YogiService) {
-      this.idUser = new JwtHelperService().decodeToken(localStorage.getItem('token')).id;
-      this.calendrierService.getItems(this.idUser).subscribe((data) => {
+    this.idUser = new JwtHelperService().decodeToken(localStorage.getItem('token')).id;
+    this.calendrierService.getItems(this.idUser).subscribe((data) => {
       const input: Yoga[] = ((data.body) as any).Data;
       this.sessionsYoga = input;
       this.length = input.length;
