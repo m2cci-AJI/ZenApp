@@ -1,5 +1,5 @@
 {
-    "include": ["src/**/*"],
+    "include": ["src/**/*", "test/app.spec.ts"],
     "compilerOptions": {
         "outDir":"dist",
         "target":"es5",

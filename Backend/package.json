@@ -5,7 +5,9 @@
   "main": "dist/server.js",
   "scripts": {
     "clean": "rm -rf node_modules",
-    "dev": "concurrently -n \"TS, Node\" \"npx tsc --watch\" \"nodemon dist/Backend/src/server.js\""
+    "dev": "concurrently -n \"TS, Node\" \"npx tsc --watch\" \"nodemon dist/Backend/src/server.js\"",
+    "unit": "karma start karma.conf.js ",
+    "test": "npm run unit"
   },
   "author": "",
   "license": "ISC",
@@ -31,5 +33,15 @@
     "nodemailer": "^6.4.2",
     "nodemon": "^2.0.2",
     "typescript": "^3.7.4"
+  },
+  "devDependencies": {
+    "browserify": "^16.5.1",
+    "jasmine-core": "^3.5.0",
+    "karma": "^5.1.0",
+    "karma-browserify": "^7.0.0",
+    "karma-chrome-launcher": "^3.1.0",
+    "karma-coverage": "^2.0.2",
+    "karma-jasmine": "^3.3.1",
+    "watchify": "^3.11.1"
   }
 }
