@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { TimelineOptions, DataSet, Timeline } from 'vis';
 import { ItemCalendrier } from '../../models/item.model';
 import { CalendrierService } from 'src/app/services/calendrier.service';
@@ -15,7 +15,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
   styleUrls: ['./timeline.component.css']
 })
 
-export class TimelineComponent implements OnInit, AfterViewInit {
+export class TimelineComponent implements OnInit {
 
   @ViewChild('VisTimeLine', {static: false}) VisTimeLine: ElementRef;
   public item: number = undefined;
@@ -26,9 +26,6 @@ export class TimelineComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     this.createItems();
-  }
-
-  ngAfterViewInit(): void {
   }
 
   setCommentWindow() {

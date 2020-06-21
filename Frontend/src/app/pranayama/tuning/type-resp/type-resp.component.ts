@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
-import { PranayamaService } from '../../pranayama.service';
+import { PranayamaService } from '../../../services/pranayama.service';
 
 @Component({
   selector: 'app-type-resp',

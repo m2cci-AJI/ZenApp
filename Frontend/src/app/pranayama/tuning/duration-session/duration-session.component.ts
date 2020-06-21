@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Options } from 'ng5-slider';
 import { Router } from '@angular/router';
-import { PranayamaService } from '../../pranayama.service';
+import { PranayamaService } from 'src/app/services/pranayama.service';
 
 @Component({
   selector: 'app-duration-session',

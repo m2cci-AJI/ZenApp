@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { PranayamaService } from '../../pranayama.service';
+import { PranayamaService } from '../../../services/pranayama.service';
 import { NgForm } from '@angular/forms';
 
 @Component({

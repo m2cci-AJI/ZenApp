@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MeditationService } from '../../services/meditation.service';
 import { CalendrierService } from 'src/app/services/calendrier.service';
-import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dialog';
 import { CommentComponent } from 'src/app/comment/comment.component';
 import { Yoga } from 'src/app/models/yoga.model';
 import { sessionYoga } from 'src/app/yoga.enum';
@@ -23,7 +23,7 @@ export class PracticeComponent implements OnInit {
   sousTypeYoga: any;
   constructor(private meditationService: MeditationService,
               private calendrierService: CalendrierService,
-              private matDialog: MatDialog) { }
+              public matDialog: MatDialog) { }
 
   ngOnInit() {
     this.meditations = [];
@@ -89,9 +89,10 @@ export class PracticeComponent implements OnInit {
   }
 
   editComment() {
+    let dialogRef: MatDialogRef<any>;
     const dialogConfig = new MatDialogConfig();
     this.openModal(dialogConfig);
-    const dialogRef = this.matDialog.open(CommentComponent, dialogConfig);
+    dialogRef = this.matDialog.open(CommentComponent, dialogConfig);
     dialogRef.afterClosed().subscribe(
       (data) => {
         if (data) {

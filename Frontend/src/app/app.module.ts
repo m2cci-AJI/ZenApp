@@ -6,7 +6,7 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { PranayamaModule } from './pranayama/pranayama.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HomeComponent } from './home/home.component';
-import { PranayamaService } from './pranayama/pranayama.service';
+import { PranayamaService } from './services/pranayama.service';
 import { CommentComponent } from './comment/comment.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule , HTTP_INTERCEPTORS} from '@angular/common/http';
