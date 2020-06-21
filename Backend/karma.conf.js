@@ -7,25 +7,30 @@ module.exports = function(config) {
       // frameworks to use
       // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
       frameworks: ['jasmine','browserify'],
-  
+      client: {
+        clearContext: false // leave Jasmine Spec Runner output visible in browser
+      },
       // list of files / patterns to load in the browser
       files: [
-        'test/**/*.[sS]pec.ts',
+        'dist/Backend/test/*.spec.js'
       ],
-  
       // list of files to exclude
       exclude: [ ],
   
       // preprocess matching files before serving them to the browser
       // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
       preprocessors: {
-        'dist/*.js': ['coverage'],
-        'test/**/*.[sS]pec.ts': ['browserify']
+        './**/*.js': ['coverage'],
+        'dist/Backend/test/*.spec.js': ['browserify']
       },
+      coverageReporter: {
+        type: 'html',
+        dir: 'coverage/'
+    },
       // test results reporter to use
       // possible values: 'dots', 'progress'
       // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-      reporters: ['progress', 'coverage'],
+      reporters: ['progress', 'coverage' ],
   
       // web server port
       port: 9876,
