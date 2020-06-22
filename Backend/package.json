@@ -7,7 +7,8 @@
     "clean": "rm -rf node_modules",
     "dev": "concurrently -n \"TS, Node\" \"npx tsc --watch\" \"nodemon dist/Backend/src/server.js\"",
     "unit": "karma start karma.conf.js ",
-    "test": "npm run unit"
+    "test": "npm run unit",
+    "lint": "eslint . --ext .ts"
   },
   "author": "",
   "license": "ISC",
@@ -37,7 +38,10 @@
   },
   "devDependencies": {
     "@types/jasmine": "^3.5.10",
+    "@typescript-eslint/eslint-plugin": "^3.4.0",
+    "@typescript-eslint/parser": "^3.4.0",
     "browserify": "^16.5.1",
+    "eslint": "^7.3.0",
     "jasmine": "^3.5.0",
     "jasmine-core": "^3.5.0",
     "jasmine-node": "^3.0.0",
