@@ -1,0 +1,9 @@
+{
+    "name": "Zenrelax_Application",
+    "version": "1.0.0",
+    "scripts": {
+      "sonar": "sonar-scanner"
+    },
+    "private": true
+  }
+  
