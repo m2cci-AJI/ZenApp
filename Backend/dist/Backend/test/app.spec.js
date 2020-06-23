@@ -13,9 +13,9 @@ describe('app', function () {
             req.name = 'ahmed';
             req.login = 'jemaiAH';
             req.birthday = '03/11/1985';
-            req.email = 'ahmed.jemai@hotmail.com';
-            req.password = 'AHm08718127',
-                req.ConnectionPerWeek = 3;
+            req.email = 'jemai@hotmail.fr';
+            req.password = 'AHm08718474127';
+            req.ConnectionPerWeek = 3;
             next();
         });
         done();

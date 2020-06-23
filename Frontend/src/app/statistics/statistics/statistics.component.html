@@ -9,7 +9,7 @@
           </ng-template>
           <ng-template #content>
             <div id="panel-profil">
-              <img src="../../../assets/img/logo_user.svg" width="200" height="auto">
+              <img src="../../../assets/img/logo_user.svg" alt="logo" width="200" height="auto">
               <div class="profil">
                 <br>
                 <h3>Détails</h3>
@@ -57,24 +57,25 @@
           <ng-template #content>
             <div class="table-container mat-elevation-z8">
               <table mat-table [dataSource]="dataSource" matSort>
+                <caption> Récapitulation des séances méditatives</caption>
                 <ng-container matColumnDef="start">
-                  <th mat-header-cell *matHeaderCellDef mat-sort-header>Date de la séance</th>
+                  <th id = "column_start" mat-header-cell *matHeaderCellDef mat-sort-header>Date de la séance</th>
                   <td mat-cell *matCellDef="let element">{{element.start | date}}</td>
                 </ng-container>
                 <ng-container matColumnDef="typeYoga">
-                  <th mat-header-cell *matHeaderCellDef mat-sort-header>Type de méditation</th>
+                  <th id = "column_typeYoga" mat-header-cell *matHeaderCellDef mat-sort-header>Type de méditation</th>
                   <td mat-cell *matCellDef="let element">{{element.typeYoga}}</td>
                 </ng-container>
                 <ng-container matColumnDef="sousTypeYoga">
-                  <th mat-header-cell *matHeaderCellDef mat-sort-header>Sous-Type de méditation</th>
+                  <th id = "column_typeYoga" mat-header-cell *matHeaderCellDef mat-sort-header>Sous-Type de méditation</th>
                   <td mat-cell *matCellDef="let element">{{element.sousTypeYoga}}</td>
                 </ng-container>
                 <ng-container matColumnDef="durationYoga">
-                  <th mat-header-cell *matHeaderCellDef mat-sort-header>Durée de la séance</th>
+                  <th  id = "column_sousTypeYoga" mat-header-cell *matHeaderCellDef mat-sort-header>Durée de la séance</th>
                   <td mat-cell *matCellDef="let element">{{element.durationYoga}}</td>
                 </ng-container>
                 <ng-container matColumnDef="indeX">
-                  <th mat-header-cell *matHeaderCellDef mat-sort-header>Commentaires</th>
+                  <th id = "column_indeX" mat-header-cell *matHeaderCellDef mat-sort-header>Commentaires</th>
                   <td mat-cell *matCellDef="let element"><a [routerLink]="" queryParamsHandling="preserve"
                       (click)="getComment(element.indeX)">cliquez-ici</a></td>
                 </ng-container>

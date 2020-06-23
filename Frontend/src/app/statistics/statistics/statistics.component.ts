@@ -203,6 +203,6 @@ export class StatisticsComponent implements OnInit {
   getComment(index: number) {
     const dialogConfig = new MatDialogConfig();
     this.openModal(dialogConfig, index);
-    const dialogRef = this.matDialog.open(WindowCommentComponent, dialogConfig);
+    this.matDialog.open(WindowCommentComponent, dialogConfig);
   }
 }

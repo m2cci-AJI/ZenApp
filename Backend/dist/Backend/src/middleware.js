@@ -5,7 +5,7 @@ exports.auth = function (req, res, next) {
     var secretKey = 'aagethrud812d8d2dhdydbd5d4d2d'; // clé de sécurité de token d'authentification
     try {
         if (req.headers.authorization) {
-            var token = req.headers.authorization.split(' ')[1]; // récupérer le token d'autentification de l'entête de la requête
+            var token = (req.headers.authorization).split(' ')[1]; // récupérer le token d'autentification de l'entête de la requête
             var decodedToken = jwt.verify(token, secretKey); // décoder le token d'authentification
             var idyogi = decodedToken.id; // récupérer l'id d'utilisateur du token
             if (req.body.idYogi && req.body.idYogi !== idyogi) {

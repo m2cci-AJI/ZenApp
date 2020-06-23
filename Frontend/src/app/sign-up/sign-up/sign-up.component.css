@@ -17,10 +17,6 @@
       height: auto;
     }
   }
-
-  mat-error div {
-    color: red;
-  }
   
   @media (min-width: 768px) {
     .card {

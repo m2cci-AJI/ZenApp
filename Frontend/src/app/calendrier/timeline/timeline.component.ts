@@ -31,7 +31,7 @@ export class TimelineComponent implements OnInit {
   setCommentWindow() {
     const dialogConfig = new MatDialogConfig();
     this.openModal(dialogConfig);
-    const dialogRef = this.matDialog.open(WindowCommentComponent, dialogConfig);
+    this.matDialog.open(WindowCommentComponent, dialogConfig);
   }
 
   getItem(yoga: Yoga, i: number): ItemCalendrier {
@@ -72,7 +72,7 @@ export class TimelineComponent implements OnInit {
         };
         const Items: any = new DataSet(items);
         const container = this.VisTimeLine.nativeElement;
-        this.timeline = new Timeline(container as any, Items, options);
+        this.timeline = new Timeline(container, Items, options);
         this.timeline.on('doubleClick',
          (event) => {
            if (event.what === 'item') {
