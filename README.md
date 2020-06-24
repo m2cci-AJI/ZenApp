@@ -1,6 +1,6 @@
 # ZenRelax
 
-Depuis sa création en 2020 par l'instructeur Ahmed Jemai, l'application  **ZenRelax** vous permet de limiter le stress et d'installer le calme et la tranquilité en quelques minutes. Elle a été mise au point graçe aux différents ouvrages élaborés par le fameux psychiatre Christophe Andrée sur le sujet de la méditation. Cette application est d'utilisation très simple, efficace et gratuite. Elle a été créée dans le cadre d'aider les personnes anxieuses pendant la période de confinement pour gérer leurs stresses.
+Depuis sa création en 2020 par l'instructeur Ahmed Jemai, l'application  **ZenRelax** vous permet de limiter le stress et d'installer le calme et la tranquilité en quelques minutes. Elle a été mise au point graçe aux différents ouvrages élaborés par le fameux psychiatre Christophe Andrée sur le sujet de la méditation. Cette application est d'utilisation très simple, efficace et gratuite. Elle a été créée dans le cadre d'aider les personnes anxieuses pendant la période de confinement pour gérer leurs stress.
 
 # Contenu de ZenRelax:
 
@@ -33,7 +33,7 @@ La base de données utilisée pour cette application est gérée par l'interméd
 ## La partie Front-end:
 
 #### Angular 8: 
-l'outil [Angular](https://angular.io/) CLI permettant de gérer une application Agular a été installé. Cet outil offre plusieurs commandes facilitant la création du projet Angular, ainsi que la génération des composants, des modules, des services, ...
+l'outil [Angular](https://angular.io/) CLI permettant de gérer une application Angular a été installé. Cet outil offre plusieurs commandes facilitant la création du projet Angular, ainsi que la génération des composants, des modules, des services, ...
 
 #### Bibliothèques: 
 Les bibliothèques utilisées dans l'application coté client sont les suivantes:
@@ -50,7 +50,7 @@ Commencez par le clonage du projet en utilisant HTTPS:
 https://github.com/m2cci-AJI/ZenApp.git
 
 ```
-ou en utilisant SSH:
+ou, en utilisant SSH:
 ```
 git@github.com:m2cci-AJI/ZenApp.git
 
@@ -114,6 +114,19 @@ npm run test
 # Workflow adopté
 Comme un système de gestion des branches, ce projet adopte le workflow Github-Flow. Pour en savoir plus, consultez ce lien: [https://medium.com/@patrickporto/4-branching-workflows-for-git-30d0aaee7bf](https://medium.com/@patrickporto/4-branching-workflows-for-git-30d0aaee7bf).
 
+# Analyse de qualité du code
+Afin d'analyser la qualité de notre code, et détecter les bugs et les vulnérabilités, vous pouvez exécuter la commande suivante:
+
+```
+npm run sonar
+```
+Cette commande exécute le script `sonar` qui est définit dans le fichier package.json à la racine du notre code:
+
+```
+  "scripts": {
+    "sonar": "sonar-scanner"
+  }
+```
 ---
 
 Finalement, je vous souhaite une expérience de méditation agréable, réjouissez-vous !
