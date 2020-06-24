@@ -103,12 +103,16 @@ Cette commande exécute le script `clean` qui est définit dans les fichiers pac
 ---
 
 # Exécution des tests unitaires
-la commande suivante est utilisés pour exécuter des tests unitaires afin de valider notre travail de développement:
+Afin de valider notre travail de développement, la commande suivante est utilisée pour exécuter des tests unitaires que ce soient pour la partie front-end ou back-end:
 
 ```
-npm test
+npm run test
 ```
 
+---
+
+# Workflow adopté
+Comme un système de gestion des branches, ce projet adopte le workflow Github-Flow. Pour en savoir plus, consultez ce lien: [https://medium.com/@patrickporto/4-branching-workflows-for-git-30d0aaee7bf](https://medium.com/@patrickporto/4-branching-workflows-for-git-30d0aaee7bf).
 ---
 
 Finalement, je vous souhaite une expérience de méditation agréable, réjouissez-vous !
