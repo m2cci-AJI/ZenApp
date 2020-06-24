@@ -2,7 +2,9 @@
     "name": "Zenrelax_Application",
     "version": "1.0.0",
     "scripts": {
-      "sonar": "sonar-scanner"
+      "sonar": "sonar-scanner",
+      "front": "cd Frontend && npm run start",
+      "back": "cd Backend && npm run dev"
     },
     "private": true
   }
