@@ -13,8 +13,6 @@ describe('app', function () {
             req.name = 'ahmed';
             req.login = 'jemaiAH';
             req.birthday = '03/11/1985';
-            req.email = 'jemai@hotmail.fr';
-            req.password = 'AHm08718474127';
             req.ConnectionPerWeek = 3;
             next();
         });
@@ -24,7 +22,6 @@ describe('app', function () {
         mongoose.disconnect(done());
     });
     it("GET /api/signup", function (done) {
-        var yogis = [];
         request(app).get('/api/signup').expect(200, done);
     });
 });

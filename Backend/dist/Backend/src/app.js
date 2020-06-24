@@ -1,16 +1,20 @@
 "use strict";
-var __assign = (this && this.__assign) || function () {
+var __assign = (this && __assign) || function () {
     __assign = Object.assign || function(t) {
         for (var s, i = 1, n = arguments.length; i < n; i++) {
             s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
+            for (var p in s) {
+                if (Object.prototype.hasOwnProperty.call(s, p))
+                {
+                    t[p] = s[p];
+                }
+            }
         }
         return t;
     };
     return __assign.apply(this, arguments);
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
+var __importDefault = (this && __importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -26,7 +30,7 @@ var nodemailer_1 = __importDefault(require("nodemailer")); // importation du mic
 var crypto_1 = __importDefault(require("crypto")); // imporation du micro-framework crypto pour générer des codes aléatoires
 var auth = require('./middleware'); // importation de middleware de sécurité
 var session_model_1 = require("./models/session.model"); // importation du modéle séance
-var Application = /** @class */ (function () {
+var application = /** @class */ (function () {
     function Application(port) {
         this.port = port;
     } // création du construteur utilisé pour instancier un serveur
@@ -245,4 +249,4 @@ var Application = /** @class */ (function () {
     };
     return Application;
 }());
-exports.Application = Application;
+exports.Application = application;
