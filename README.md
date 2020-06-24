@@ -113,6 +113,7 @@ npm run test
 
 # Workflow adopté
 Comme un système de gestion des branches, ce projet adopte le workflow Github-Flow. Pour en savoir plus, consultez ce lien: [https://medium.com/@patrickporto/4-branching-workflows-for-git-30d0aaee7bf](https://medium.com/@patrickporto/4-branching-workflows-for-git-30d0aaee7bf).
+
 ---
 
 Finalement, je vous souhaite une expérience de méditation agréable, réjouissez-vous !
