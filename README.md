@@ -1,8 +1,29 @@
 # ZenRelax
 
+## Table des Matières
+<!-- AUTO-GENERATED-CONTENT:START (TOC:collapse=true&collapseText="Click to expand") -->
+<details>
+<summary>"Cliquer pour agrandir"</summary>
+
+- [Présentation générale](#Présentation-générale)
+- [Markdown basics](#markdown-basics)
+- [Contenu de l'application ZenRelax](#Contenu-application-ZenRelax)
+- [Outils de Développement](#Outils-Développement)
+  * [Partie back-end](#Partie-back-end)
+  * [Partie Front-end](#Partie-Front-end)
+- [Lancement de l'application sur le navigateur](#Lancement-application-navigateur)
+- [Nettoyage du projet de l'application](#Nettoyage-projet-application)
+- [Exécution des tests unitaires](#Exécution-tests-unitaires)
+- [Workflow adopté](#Workflow-adopté)
+- [Analyse de qualité du code](#Analyse-qualité-code)
+
+</details>
+
+# Présentation générale
+
 Depuis sa création en 2020 par l'instructeur Ahmed Jemai, l'application  **ZenRelax** vous permet de limiter le stress et d'installer le calme et la tranquilité en quelques minutes. Elle a été mise au point graçe aux différents ouvrages élaborés par le fameux psychiatre Christophe Andrée sur le sujet de la méditation. Cette application est d'utilisation très simple, efficace et gratuite. Elle a été créée dans le cadre d'aider les personnes anxieuses pendant la période de confinement pour gérer leurs stress.
 
-# Contenu de ZenRelax:
+# Contenu de l'application ZenRelax
 
 L' application **ZenRelax** comporte essentiellement deux types de pratiques méditatives:
 
@@ -12,11 +33,11 @@ L' application **ZenRelax** comporte essentiellement deux types de pratiques mé
 
 ---
 
-# Les outils de Développement
+# Outils de Développement
 
 Avant de pouvoir créer ce projet, vous devez installer et configurer les dépendances suivante sur votre ordinateur:
 
-## La partie back-end:
+## Partie back-end
 
 #### Node.js:
 Nous avons utilisé [Node.js](https://nodejs.org/) pour créer un serveur web contenant l'API REST. Installez également nodemon.js pour créer une expérience de développement agréable où votre navigateur s'actualise automatique à chaque changement du code source.
@@ -30,7 +51,7 @@ Nous avons utilisé le langage [TypeScript](https://www.typescriptlang.org/) sur
 #### Mongoose:
 La base de données utilisée pour cette application est gérée par l'intermédiare de [Mongodb](https://www.mongodb.com/). C'est un système de gestion de base de données (SGBD) non-relationnelle orientée document. Afin de faciliter l'interaction avec ce SGBD, le mirco-framework Mongoose a été installé. 
 
-## La partie Front-end:
+## Partie Front-end
 
 #### Angular 8: 
 l'outil [Angular](https://angular.io/) CLI permettant de gérer une application Angular a été installé. Cet outil offre plusieurs commandes facilitant la création du projet Angular, ainsi que la génération des composants, des modules, des services, ...
