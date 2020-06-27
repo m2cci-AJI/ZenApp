@@ -56,6 +56,7 @@ git@github.com:m2cci-AJI/ZenApp.git
 
 ```
 Je vous invite après à copier les fichiers audio de ce lien : [https://drive.google.com/drive/folders/1tXheaj-0HsCURzCNs41ER3MYK_XQVy-j?usp=sharing](https://drive.google.com/drive/folders/1tXheaj-0HsCURzCNs41ER3MYK_XQVy-j?usp=sharing) et les coller à cette adresse: Frontend/src/assets/audio (vous devez créer préalablement un dossier audio).
+
 Par la suite, on passe à lancer notre application ZenRelax sur le navigateur. En fait, cette application comporte principalement deux sous-dossiers indépendants: Frontend et Backend, avec leurs propres fichiers de configuration package.json. Tout d'abord, il faut exécuter la commande suivante dans deux terminaux différents pointés sur les dossiers Frontend et Backend:
 ```bash
 npm install
