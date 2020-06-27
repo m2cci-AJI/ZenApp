@@ -22,7 +22,7 @@
 
 Depuis sa création en 2020 par l'instructeur Ahmed Jemai, l'application  **ZenRelax** vous permet de limiter le stress et d'installer le calme et la tranquilité en quelques minutes. Elle a été mise au point graçe aux différents ouvrages élaborés par le fameux psychiatre Christophe Andrée sur le sujet de la méditation. Cette application est d'utilisation très simple, efficace et gratuite. Elle a été créée dans le cadre d'aider les personnes anxieuses pendant la période de confinement pour gérer leurs stress.
 
-# Contenu de l'application ZenRelax
+# Contenu de ZenRelax
 
 L' application **ZenRelax** comporte essentiellement deux types de pratiques méditatives:
 
@@ -63,7 +63,7 @@ Les bibliothèques utilisées dans l'application coté client sont les suivantes
 * [syncfusion](https://www.syncfusion.com/): cette librairie nous a permis de développer un tableau de bord de visualisation des données afin de permettre au client de suivre son évolution dans la pratiques méditatives.
 ---
 
-# Lancement de l'application sur le navigateur
+# Lancement de ZenRelax sur le navigateur
 
 Commencez par le clonage du projet en utilisant HTTPS:
 ```
