@@ -6,7 +6,6 @@
 <summary>"Cliquer pour agrandir"</summary>
 
 - [Présentation générale](#Présentation-générale)
-- [Markdown basics](#markdown-basics)
 - [Contenu de l'application ZenRelax](#Contenu-application-ZenRelax)
 - [Outils de Développement](#Outils-Développement)
   * [Partie back-end](#Partie-back-end)
