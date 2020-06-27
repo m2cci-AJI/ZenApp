@@ -6,15 +6,15 @@
 <summary>"Cliquer pour agrandir"</summary>
 
 - [Présentation générale](#Présentation-générale)
-- [Contenu de l'application ZenRelax](#Contenu-application-ZenRelax)
-- [Outils de Développement](#Outils-Développement)
+- [Contenu de l'application ZenRelax](#Contenu-de-l'application-ZenRelax)
+- [Outils de Développement](#Outils-de-Développement)
   * [Partie back-end](#Partie-back-end)
   * [Partie Front-end](#Partie-Front-end)
-- [Lancement de l'application sur le navigateur](#Lancement-application-navigateur)
-- [Nettoyage du projet de l'application](#Nettoyage-projet-application)
-- [Exécution des tests unitaires](#Exécution-tests-unitaires)
+- [Lancement de l'application sur le navigateur](#Lancement-de-l'application-sur-le-navigateur)
+- [Nettoyage du projet de l'application](#Nettoyage-du-projet-de-l'application)
+- [Exécution des tests unitaires](#Exécution-des-tests-unitaires)
 - [Workflow adopté](#Workflow-adopté)
-- [Analyse de qualité du code](#Analyse-qualité-code)
+- [Analyse de qualité du code](#Analyse-de-qualité-du-code)
 
 </details>
 
