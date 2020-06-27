@@ -108,7 +108,7 @@ Cette commande exécute le script `dev` définit dans le fichier package.json, c
 ```
 ---
 
-# Nettoyage du projet de l'application
+# Nettoyage du projet de ZenRelax
 
 Vous êtes invité à exécuter tout simplement la commande suivante:
 ```bash
