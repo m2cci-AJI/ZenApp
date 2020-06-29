@@ -16,6 +16,8 @@ Frontend/coverage
 .scannerwork
 Frontend/debug.log
 Backend/debug.log
+Frontend/dist
+Backend/dist
 
 # profiling files
 chrome-profiler-events*.json
