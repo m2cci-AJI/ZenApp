@@ -25,38 +25,25 @@ export class Application {
         const SECRET_KEY: string = 'aagethrud812d8d2dhdydbd5d4d2d'; // clé de sécurité de token d'authentification
        
         /*********************************** Connexion à Mongodb ******************************************************************************/
-        let env = process.env.NODE_ENV;
-        /* Connexion à une base de données locale sur le dossier C:\Program Files\MongoDB\Server\4.2\data (en mode de développement) */
-        if (env === 'development') {
-            const MONGODB_CONNECTION: string = 'mongodb://127.0.0.1:27017'; // localhost adresse local
-            mongoose.connect(MONGODB_CONNECTION,
-                {
-                    useCreateIndex: true,
-                    useNewUrlParser: true,
-                    useUnifiedTopology: true
-                }); // connection à la base de données Mongodb
-            const db = mongoose.connection; // base de donnée mongodb
-    
-            // vérification si la connection à la base de donnée est faite ou pas
-            db.once('open', _ => {
-                console.log('Database connecté:', MONGODB_CONNECTION)
-            }); /*connection validée */
-            db.on('error', err => {
-                console.error('Erreur de connexion:', err)
-            }); // erreur survenue empêchant la connection
-        }
         
-         /* Connexion à une base de données distante sur Mongodb Atlas (en mode de production) */
-         if (env === 'production') {
-            const MongoDB_URL = 'mongodb+srv://jemaiAHmed:AHm08718127@cluster0-r5ym1.mongodb.net/test?retryWrites=true&w=majority';
-            mongoose.connect(MongoDB_URL,
-               {
-                   useNewUrlParser: true,
-                   useUnifiedTopology: true
-               })
-               .then(() => console.log('Connexion à MongoDB réussie !'))
-               .catch(() => console.log('Connexion à MongoDB échouée !'));
-         }
+        let env = process.env.NODE_ENV;
+        const MONGODB_CONNECTION = 'mongodb://127.0.0.1:27017'; // localhost adresse local
+        const MongoDB_URL = 'mongodb+srv://jemaiAHmed:AHm08718127@cluster0-r5ym1.mongodb.net/test?retryWrites=true&w=majority'; // adresse de la base de donnée distante enregistrée sur MONgodb Atlas
+        mongoose.connect(env === 'development' ? MONGODB_CONNECTION: MongoDB_URL,
+            {
+                useCreateIndex: true,
+                useNewUrlParser: true,
+                useUnifiedTopology: true
+            }); // connection à la base de données Mongodb
+        const db = mongoose.connection; // base de donnée mongodb
+
+        // vérification si la connection à la base de donnée est faite ou pas
+        db.once('open', _ => {
+            console.log('Database connecté !')
+        }); /*connection validée */
+        db.on('error', err => {
+            console.error('Erreur de connexion:', err)
+        }); // erreur survenue empêchant la connection
          
         /********************************************************************************************************************************/
         
