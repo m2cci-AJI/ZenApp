@@ -18,28 +18,48 @@ export class Application {
 
     start() {
         const app = express(); // istanciation de l'objet express afin de créer le serveur 
-        const MONGODB_CONNECTION: string = 'mongodb://127.0.0.1:27017'; // localhost adresse local
         app.use(cors());
         app.options('*', cors()); // déblocage des mesures de sécurité cors
         app.use(bodyparser.json());
         app.use(bodyparser.urlencoded({ limit: '10mb', extended: true })); //  middlewares pour traiter les objets json envoyés dans les corps des requetes
         const SECRET_KEY: string = 'aagethrud812d8d2dhdydbd5d4d2d'; // clé de sécurité de token d'authentification
-        mongoose.connect(MONGODB_CONNECTION,
-            {
-                useCreateIndex: true,
-                useNewUrlParser: true,
-                useUnifiedTopology: true
-            }); // connection à la base de données Mongodb
-        const db = mongoose.connection; // base de donnée mongodb
-
-        // vérification si la connection à la base de donnée est faite ou pas
-        db.once('open', _ => {
-            console.log('Database connected:', MONGODB_CONNECTION)
-        }); /*connection validée */
-        db.on('error', err => {
-            console.error('connection error:', err)
-        }); /*erreur survenue empêchant la connection */
-
+       
+        /*********************************** Connexion à Mongodb ******************************************************************************/
+        let env = process.env.NODE_ENV;
+        /* Connexion à une base de données locale sur le dossier C:\Program Files\MongoDB\Server\4.2\data (en mode de développement) */
+        if (env === 'development') {
+            const MONGODB_CONNECTION: string = 'mongodb://127.0.0.1:27017'; // localhost adresse local
+            mongoose.connect(MONGODB_CONNECTION,
+                {
+                    useCreateIndex: true,
+                    useNewUrlParser: true,
+                    useUnifiedTopology: true
+                }); // connection à la base de données Mongodb
+            const db = mongoose.connection; // base de donnée mongodb
+    
+            // vérification si la connection à la base de donnée est faite ou pas
+            db.once('open', _ => {
+                console.log('Database connecté:', MONGODB_CONNECTION)
+            }); /*connection validée */
+            db.on('error', err => {
+                console.error('Erreur de connexion:', err)
+            }); // erreur survenue empêchant la connection
+        }
+        
+         /* Connexion à une base de données distante sur Mongodb Atlas (en mode de production) */
+         if (env === 'production') {
+            const MongoDB_URL = 'mongodb+srv://jemaiAHmed:AHm08718127@cluster0-r5ym1.mongodb.net/test?retryWrites=true&w=majority';
+            mongoose.connect(MongoDB_URL,
+               {
+                   useNewUrlParser: true,
+                   useUnifiedTopology: true
+               })
+               .then(() => console.log('Connexion à MongoDB réussie !'))
+               .catch(() => console.log('Connexion à MongoDB échouée !'));
+         }
+         
+        /********************************************************************************************************************************/
+        
         app.post('/api/confirm-reset-password', (req: Request, res: Response, next) => {
             if (!req.body.email) {
                 return res.status(500).json({ message: 'L\'email est manqué ! Veuillez écrire votre adresse email.' });
@@ -127,7 +147,7 @@ export class Application {
                     if (!token) {
                         return res.status(409).json({ message: 'L\'URL est non validé' });
                     }
-                    Yogi.findByIdAndUpdate({ _id: token._userId }, {}) 
+                    Yogi.findByIdAndUpdate({ _id: token._userId }, {})
                         .then(() => {
                             res.status(200).json({ message: 'Token a été vérifié avec succès.' });
                         })
@@ -246,7 +266,7 @@ export class Application {
         }); // middleware permettant de mettre à jour une séance de relaxation à travers son id
 
         app.listen(this.port, () => {
-            console.log("réponse recue !");
+            console.log("Réponse recue !");
         }); // middleware permettant d'écouter le serveur sur un port
     }
 }
