@@ -39,6 +39,7 @@ module.exports = function (config) {
     logLevel: config.LOG_INFO,
     autoWatch: true,
     restartOnFileChange: true,
+    failOnEmptyTestSuite: false,
     captureTimeout: 210000,
     browserDisconnectTolerance: 3,
     browserDisconnectTimeout: 210000,
