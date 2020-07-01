@@ -5,12 +5,12 @@
   "main": "dist/server.js",
   "scripts": {
     "clean": "rm -rf node_modules",
-    "app": "concurrently -n \"TS, Node\" \"npx tsc --watch\" \"nodemon dist/Backend/src/server.js\"",
     "unit": "karma start karma.conf.js ",
     "test": "npm run unit",
     "lint": "eslint . --ext .ts",
     "dev":  "concurrently -n \"TS, Node\" \"npx tsc --watch\" \"set NODE_ENV=development&& nodemon dist/Backend/src/server.js\"",
-    "prod": "concurrently -n \"TS, Node\" \"npx tsc --watch\" \"set NODE_ENV=production&& nodemon dist/Backend/src/server.js\""
+    "prod": "concurrently -n \"TS, Node\" \"npx tsc --watch\" \"set NODE_ENV=production&& nodemon dist/Backend/src/server.js\"",
+    "build": "rm -rf ./dist && npx tsc"
   },
   "author": "",
   "license": "ISC",
