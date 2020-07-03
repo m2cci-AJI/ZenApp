@@ -1,3 +1,5 @@
+[![code grade](https://www.code-inspector.com/project/10567/status/svg)](https://www.code-inspector.com/project/10567/status/svg)
+
 # ZenRelax
 
 ## Table des Matières
