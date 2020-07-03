@@ -17,9 +17,9 @@ pipeline {
             steps {
                 dir("ZenApp") {
                     dir("Frontend") {
-                         bat "npm install"
-                         bat "npm run test"
-                         bat "npm run build"
+                         bat label: '', script: 'npm install'
+                         bat label: '', script: 'npm run test'
+                         bat label: '', script: 'npm run build'
                     }
                  }
             }
@@ -28,8 +28,8 @@ pipeline {
             steps {
                 dir("ZenApp") {
                     dir("Backend") {
-                         bat "npm install"
-                         bat "npm run build"
+                         bat label: '', script: 'npm install'
+                         bat label: '', script: 'npm run build'
                     }
                  }
             }
