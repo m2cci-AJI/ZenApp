@@ -63,7 +63,7 @@ export class Application {
             if (!req.body.email) {
                 return res.status(500).json({ message: 'L\'email est manqué ! Veuillez écrire votre adresse email.' });
             } // envoi d'une erreur en cas où l'utilisateur a oublié de mettre son adresse email
-            Yogi.findOne({ email: req.body.email })
+            Yogi.findOne({ "email": req.body.email })
                 .then((yogi) => {
                     if (!yogi) {
                         return res.status(409).json({ message: 'Cet Email n\'existe pas !' });
@@ -111,7 +111,7 @@ export class Application {
         }); // middleware permettant de s'inscrire avant d'accéder à l'application
 
         app.post('/api/login', (req: Request, res: Response, next) => {
-            Yogi.findOne({ email: req.body.email })
+            Yogi.findOne({ "email": req.body.email })
                 .then((yogi) => {
                     if (!yogi) {
                         return res.status(401).json({ message: 'Cet email n\'existe pas ! Veuillez vérifier votre adresse email.' });
@@ -141,7 +141,7 @@ export class Application {
             if (!req.body.resettoken) {
                 return res.status(500).json({ message: 'Token est obligatoire !' });
             }
-            passwordResetToken.findOne({ resettoken: req.body.resettoken })
+            passwordResetToken.findOne({ "resettoken": req.body.resettoken })
                 .then((token) => {
                     if (!token) {
                         return res.status(409).json({ message: 'L\'URL est non validé' });
@@ -156,7 +156,7 @@ export class Application {
         }); // middleware permettant de valider le token d'authentification utilisé pour revenir à l'application après la clique sur le lien envoyé par l'email
 
         app.post('/api/new-password', (req: Request, res: Response, next) => {
-            passwordResetToken.findOne({ resettoken: req.body.resettoken })
+            passwordResetToken.findOne({ "resettoken": req.body.resettoken })
                 .then((yogiToken) => {
                     if (!yogiToken) {
                         return res.status(409).json({ message: 'Token est expiré' });
@@ -185,7 +185,7 @@ export class Application {
 
 
         app.post('/api/req-reset-password', (req: Request, res: Response, next) => {
-            Yogi.findOne({ email: req.body.email })
+            Yogi.findOne({ "email": req.body.email })
                 .then((yogi) => {
                     if (!yogi) {
                         return res.status(401).json({ message: 'Cet email n\'existe pas ! Veuillez vérifier votre adresse email.' });
