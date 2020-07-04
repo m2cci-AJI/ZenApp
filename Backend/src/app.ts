@@ -11,6 +11,7 @@ import nodemailer from 'nodemailer'; // importation du micro-framework nodemaile
 import crypto from "crypto"; // imporation du micro-framework crypto pour générer des codes aléatoires
 const auth = require('./middleware'); // importation de middleware de sécurité
 import { Yoga } from './models/session.model'; // importation du modéle séance
+var RateLimit = require('express-rate-limit'); // importation du module pour limiter le nombre de requete 
 
 export class Application {
 
@@ -23,13 +24,13 @@ export class Application {
         app.use(bodyparser.json());
         app.use(bodyparser.urlencoded({ limit: '10mb', extended: true })); //  middlewares pour traiter les objets json envoyés dans les corps des requetes
         const SECRET_KEY: string = 'aagethrud812d8d2dhdydbd5d4d2d'; // clé de sécurité de token d'authentification
-       
+
         /*********************************** Connexion à Mongodb ******************************************************************************/
-        
+
         let env = process.env.NODE_ENV;
         const MONGODB_CONNECTION = 'mongodb://127.0.0.1:27017'; // localhost adresse local
         const MongoDB_URL = 'mongodb+srv://jemaiAHmed:AHm08718127@cluster0-r5ym1.mongodb.net/test?retryWrites=true&w=majority'; // adresse de la base de donnée distante enregistrée sur MONgodb Atlas
-        mongoose.connect(env === 'development' ? MONGODB_CONNECTION: MongoDB_URL,
+        mongoose.connect(env === 'development' ? MONGODB_CONNECTION : MongoDB_URL,
             {
                 useCreateIndex: true,
                 useNewUrlParser: true,
@@ -44,9 +45,20 @@ export class Application {
         db.on('error', err => {
             console.error('Erreur de connexion:', err)
         }); // erreur survenue empêchant la connection
-         
+
         /********************************************************************************************************************************/
-        
+
+        /****************************************** Sécurité de limitation de débit  ************************************************************/
+
+        let limiter = new RateLimit({
+            windowMs: 1 * 60 * 1000, // 1 minute
+            max: 60
+        }); // limiter les requetes à 60 requetes/minute pour ne pas bloquer l'application ou ne plus répondre à des requetes
+       
+        app.use(limiter);
+
+        /********************************************************************************************************************************/
+
         app.post('/api/confirm-reset-password', (req: Request, res: Response, next) => {
             if (!req.body.email) {
                 return res.status(500).json({ message: 'L\'email est manqué ! Veuillez écrire votre adresse email.' });
