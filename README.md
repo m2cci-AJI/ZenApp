@@ -1,4 +1,5 @@
 [![code grade](https://www.code-inspector.com/project/10567/status/svg)](https://www.code-inspector.com/project/10567/status/svg)
+[![Build Status](http://localhost:8080/buildStatus/icon?job=ZenRelaxPipelines&build=29)](http://localhost:8080/job/ZenRelaxPipelines/29/)
 
 # ZenRelax
 
