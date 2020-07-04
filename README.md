@@ -1,5 +1,6 @@
 [![code grade](https://www.code-inspector.com/project/10567/status/svg)](https://www.code-inspector.com/project/10567/status/svg)
-[![Build Status](https://img.shields.io/badge/build-passed-yellow)](http://localhost:8080/job/ZenRelaxPipelines/29/)
+[![Build Status](https://img.shields.io/badge/build-passed-yellow)](http://localhost:8080/buildStatus/icon?job=ZenRelaxPipelines&build=29)
+
 
 # ZenRelax
 
