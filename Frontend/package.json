@@ -46,9 +46,6 @@
     "vis": "^4.21.0-EOL",
     "zone.js": "~0.9.1"
   },
-  "engines": {
-    "node": "10.21.0"
-  },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.803.23",
     "@angular/cli": "~8.3.23",
