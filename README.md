@@ -7,7 +7,7 @@
 
 <!-- AUTO-GENERATED-CONTENT:START (TOC:collapse=true&collapseText="Click to expand") -->
 <details>
-<summary>Cliquer pour agrandir</summary>
+<summary>Cliquer pour agrandir :</summary>
 
 - [Présentation générale](#Présentation-générale)
 - [Contenu de ZenRelax](#Contenu-de-ZenRelax)
