@@ -3,7 +3,11 @@
 
 # ZenRelax
 
+<<<<<<< HEAD
 ## Table des Matières de l'application zen
+=======
+## Table des Matières opps
+>>>>>>> 47e36b753402e7be8e6f8b5b69f68518a9acc230
 
 <!-- AUTO-GENERATED-CONTENT:START (TOC:collapse=true&collapseText="Click to expand") -->
 <details>
