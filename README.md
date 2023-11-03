@@ -3,7 +3,7 @@
 
 # ZenRelax 
 
-## Table des Matières de l'application
+## Table des Matières
 
 <details>
 <summary>Cliquer ici pour agrandir :</summary>
