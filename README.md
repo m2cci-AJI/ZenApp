@@ -3,7 +3,7 @@
 
 # ZenRelax
 
-## Table des Matières de l'application zen
+## Table des Matières
 
 <!-- AUTO-GENERATED-CONTENT:START (TOC:collapse=true&collapseText="Click to expand") -->
 <details>
