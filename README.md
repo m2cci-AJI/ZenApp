@@ -5,7 +5,6 @@
 
 ## Table des Matières de l'application
 
-<!-- AUTO-GENERATED-CONTENT:START (TOC:collapse=true&collapseText="Click to expand") -->
 <details>
 <summary>Cliquer pour agrandir :</summary>
 
