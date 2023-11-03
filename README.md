@@ -6,7 +6,7 @@
 ## Table des Matières de l'application
 
 <details>
-<summary>Cliquer pour agrandir :</summary>
+<summary>Cliquer ici pour agrandir :</summary>
 
 - [Présentation générale](#Présentation-générale)
 - [Contenu de ZenRelax](#Contenu-de-ZenRelax)
