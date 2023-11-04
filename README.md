@@ -6,7 +6,7 @@
 ## Table des Matières
 
 <details>
-<summary>Cliquer pour agrandir iiiiipppppi:</summary>
+<summary>Cliquer pour agrandir:</summary>
 
 - [Présentation générale et détaillée](#Présentation-générale)
 - [Contenu de ZenRelax](#Contenu-de-ZenRelax)
