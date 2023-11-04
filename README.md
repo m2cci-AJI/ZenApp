@@ -8,8 +8,8 @@
 <details>
 <summary>Cliquer pour agrandir :</summary>
 
-- [Présentation générale et détaillée](#Présentation-générale)
 - [Contenu de ZenRelax](#Contenu-de-ZenRelax)
+- [Présentation générale et détaillée](#Présentation-générale)
 - [Outils de Développement](#Outils-de-Développement)
   - [Partie back-end](#Partie-back-end)
   - [Partie Front-end](#Partie-Front-end)
